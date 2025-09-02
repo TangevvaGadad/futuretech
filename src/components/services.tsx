@@ -97,20 +97,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-white relative">
-      {/* Birds (mirror hero placement) */}
-      <div className="hidden md:block absolute left-6 top-12 -rotate-6">
-        <TinyGif src="/bird.gif" size={60} className="opacity-90 animate-float" />
-      </div>
-      <div className="hidden md:block absolute left-10 bottom-24 opacity-80">
-        <TinyGif src="/bird.gif" size={48} className="animate-float" />
-      </div>
-      <div className="hidden md:block absolute right-6 top-12 rotate-6">
-        <TinyGif src="/bird.gif" size={60} className="opacity-90 animate-float" />
-      </div>
-      <div className="hidden md:block absolute right-8 bottom-24 -rotate-6">
-        <TinyGif src="/bird.gif" size={48} className="opacity-80 animate-float" />
-      </div>
+    <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -146,30 +133,43 @@ const Services = () => {
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
-                     {services.map((service) => (
+          {services.map((service, index) => (
             <motion.div
               key={service.title}
               variants={itemVariants}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -8, scale: 1.02 }}
               className="group"
             >
-              <Card className="p-6 h-full hover:shadow-xl transition-all duration-300 border-0 bg-white group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-gray-50">
-                <div className={`w-14 h-14 ${service.gradient} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-7 h-7 text-white" />
+              <Card className={`p-6 h-full hover:shadow-2xl transition-all duration-500 border-0 relative overflow-hidden group ${getServiceBackgroundColor(index)}`}>
+                {/* Background Pattern */}
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                  <div className={`w-full h-full ${getServiceColor(index)} rounded-full blur-3xl`} />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  {service.description}
-                </p>
-                <div className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-                      <span className="text-sm text-gray-500">{feature}</span>
-                    </div>
-                  ))}
+                
+                <div className="relative z-10">
+                  <div className={`w-14 h-14 ${getServiceColor(index)} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <service.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+                  <div className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <motion.div 
+                        key={featureIndex}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: featureIndex * 0.1 }}
+                        className="flex items-center space-x-3"
+                      >
+                        <div className={`w-2 h-2 ${getServiceColor(index)} rounded-full`} />
+                        <span className="text-sm text-gray-500 font-medium">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </Card>
             </motion.div>
@@ -185,12 +185,12 @@ const Services = () => {
           className="mt-20 text-center"
         >
           <motion.div variants={itemVariants}>
-            <Card className="p-12 bg-gradient-to-r from-primary/5 to-secondary/5 border-0">
+            <Card className="p-12 bg-gradient-to-r from-blue-50 to-purple-50 border-0">
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
                 Ready to Transform Your Ideas?
               </h3>
               <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                                 Let&apos;s discuss how our technology solutions can help your business 
+                Let&apos;s discuss how our technology solutions can help your business 
                 achieve its goals and make a positive impact.
               </p>
               <motion.button
@@ -206,6 +206,36 @@ const Services = () => {
       </div>
     </section>
   );
+};
+
+// Helper function to get different colors for services
+const getServiceColor = (index: number) => {
+  const colors = [
+    "bg-gradient-to-r from-blue-500 to-indigo-600",
+    "bg-gradient-to-r from-purple-500 to-pink-600",
+    "bg-gradient-to-r from-green-500 to-emerald-600",
+    "bg-gradient-to-r from-orange-500 to-red-600",
+    "bg-gradient-to-r from-teal-500 to-cyan-600",
+    "bg-gradient-to-r from-indigo-500 to-purple-600",
+    "bg-gradient-to-r from-pink-500 to-rose-600",
+    "bg-gradient-to-r from-emerald-500 to-green-600"
+  ];
+  return colors[index % colors.length];
+};
+
+// Helper function to get different background colors for service cards
+const getServiceBackgroundColor = (index: number) => {
+  const colors = [
+    "bg-gradient-to-r from-blue-50 to-purple-50",
+    "bg-gradient-to-r from-purple-50 to-pink-50",
+    "bg-gradient-to-r from-green-50 to-emerald-50",
+    "bg-gradient-to-r from-orange-50 to-red-50",
+    "bg-gradient-to-r from-teal-50 to-cyan-50",
+    "bg-gradient-to-r from-indigo-50 to-purple-50",
+    "bg-gradient-to-r from-pink-50 to-rose-50",
+    "bg-gradient-to-r from-emerald-50 to-green-50"
+  ];
+  return colors[index % colors.length];
 };
 
 export default Services;
