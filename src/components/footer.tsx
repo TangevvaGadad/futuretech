@@ -12,6 +12,7 @@ import {
   Github,
   ArrowRight
 } from "lucide-react";
+import TinyGif from "@/components/ui/tiny-gif";
 
 const Footer = () => {
   const footerLinks = {
@@ -150,7 +151,7 @@ const Footer = () => {
       <Separator className="bg-gray-800" />
 
       {/* Bottom Footer */}
-      <div className="py-8">
+      <div className="py-8 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <motion.div
@@ -181,6 +182,10 @@ const Footer = () => {
               ))}
             </motion.div>
           </div>
+        </div>
+        {/* Decorative tiny GIF in the corner */}
+        <div className="absolute right-4 bottom-4 opacity-80 hover:opacity-100 transition-opacity">
+          <TinyGif src="/bird.gif" alt="decorative" className="animate-float" />
         </div>
       </div>
     </footer>

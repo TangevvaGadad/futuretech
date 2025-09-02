@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
+import TinyGif from "@/components/ui/tiny-gif";
 import { Badge } from "@/components/ui/badge";
 import { 
   Code, 
@@ -96,7 +97,20 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-white relative">
+      {/* Birds (mirror hero placement) */}
+      <div className="hidden md:block absolute left-6 top-12 -rotate-6">
+        <TinyGif src="/bird.gif" size={60} className="opacity-90 animate-float" />
+      </div>
+      <div className="hidden md:block absolute left-10 bottom-24 opacity-80">
+        <TinyGif src="/bird.gif" size={48} className="animate-float" />
+      </div>
+      <div className="hidden md:block absolute right-6 top-12 rotate-6">
+        <TinyGif src="/bird.gif" size={60} className="opacity-90 animate-float" />
+      </div>
+      <div className="hidden md:block absolute right-8 bottom-24 -rotate-6">
+        <TinyGif src="/bird.gif" size={48} className="opacity-80 animate-float" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"

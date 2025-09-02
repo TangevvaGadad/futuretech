@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
+import TinyGif from "@/components/ui/tiny-gif";
 
 const Hero = () => {
   return (
@@ -143,6 +144,19 @@ const Hero = () => {
             ))}
           </motion.div>
         </motion.div>
+      </div>
+
+      {/* Decorative birds in hero corners */}
+      <div className="hidden md:block absolute left-6 top-24 rotate-6">
+        <TinyGif src="/bird.gif" size={54} className="opacity-90 animate-float" />
+      </div>
+      <div className="hidden md:block absolute left-8 bottom-24 -rotate-6">
+        <TinyGif src="/bird.gif" size={46} className="opacity-80 animate-float" />
+      </div>
+
+      {/* Featured hero GIF (place your file as /public/laptop.gif) */}
+      <div className="hidden md:block absolute right-10 top-28">
+        <TinyGif src="/laptop.gif" size={88} className="opacity-95 animate-float" />
       </div>
 
       {/* Scroll Indicator */}

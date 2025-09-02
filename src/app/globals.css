@@ -195,6 +195,11 @@
   .animate-fade-in-right {
     animation: fadeInRight 0.8s ease-out forwards;
   }
+
+  /* Subtle hover utility for links */
+  .hover-link {
+    @apply transition-all duration-300 ease-in-out hover:text-primary hover:-translate-y-0.5;
+  }
 }
 
 @keyframes float {

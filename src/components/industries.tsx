@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
+import TinyGif from "@/components/ui/tiny-gif";
 import { Badge } from "@/components/ui/badge";
 import { 
   GraduationCap, 
@@ -86,7 +87,20 @@ const Industries = () => {
   };
 
   return (
-    <section id="industries" className="py-20 bg-gray-50">
+    <section id="industries" className="py-20 bg-gray-50 relative">
+      {/* Birds (mirror hero placement) */}
+      <div className="hidden md:block absolute left-6 top-20">
+        <TinyGif src="/bird.gif" size={62} className="opacity-90 animate-float" />
+      </div>
+      <div className="hidden md:block absolute left-8 bottom-28 -rotate-3">
+        <TinyGif src="/bird.gif" size={50} className="opacity-80 animate-float" />
+      </div>
+      <div className="hidden md:block absolute right-6 top-20 -rotate-6">
+        <TinyGif src="/bird.gif" size={62} className="opacity-90 animate-float" />
+      </div>
+      <div className="hidden md:block absolute right-8 bottom-28 rotate-3">
+        <TinyGif src="/bird.gif" size={50} className="opacity-80 animate-float" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
