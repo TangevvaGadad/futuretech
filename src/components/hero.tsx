@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
@@ -78,11 +79,11 @@ export default function HeroSection() {
           <div className="mt-10 text-gray-600">
             <p className="text-sm mb-3">Trusted by Top Companies</p>
             <div className="flex gap-6 items-center opacity-80">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" width={90} height={30} />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/FedEx_Express.svg" alt="FedEx" width={90} height={30} />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width={90} height={30} />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" width={90} height={30} />
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Airbnb_Logo_Bélo.svg" alt="Airbnb" width={90} height={30} />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" width={90} height={30} loading="lazy" />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/3/35/FedEx_Express.svg" alt="FedEx" width={90} height={30} loading="lazy" />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width={90} height={30} loading="lazy" />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" width={90} height={30} loading="lazy" />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Airbnb_Logo_Bélo.svg" alt="Airbnb" width={90} height={30} loading="lazy" />
             </div>
           </div>
         </div>
@@ -95,11 +96,12 @@ export default function HeroSection() {
           className="relative mt-12 lg:mt-0"
         >
           {/* Person Image */}
-          <img
+          <Image
             src="/boy.png"
             alt="Hero visual"
             width={720}
             height={720}
+            priority={false}
             className="relative z-10"
           />
         </motion.div>

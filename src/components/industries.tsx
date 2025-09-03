@@ -1,9 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
-import TinyGif from "@/components/ui/tiny-gif";
-import { Badge } from "@/components/ui/badge";
 import { 
   GraduationCap, 
   Radio, 
@@ -92,7 +89,7 @@ const Industries = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
           className="text-center mb-16"
         >
@@ -117,7 +114,7 @@ const Industries = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
@@ -151,9 +148,9 @@ const Industries = () => {
                     {industry.features.map((feature, featureIndex) => (
                       <motion.div 
                         key={featureIndex}
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: featureIndex * 0.1 }}
+                        transition={{ duration: 0.35, delay: featureIndex * 0.06, ease: "easeOut" }}
                         className="flex items-center space-x-3"
                       >
                         <div className={`w-2 h-2 ${industry.gradient} rounded-full`} />
@@ -223,31 +220,7 @@ const Industries = () => {
   );
 };
 
-// Helper function to get different colors for industries
-const getIndustryColor = (index: number) => {
-  const colors = [
-    "bg-gradient-to-r from-blue-500 to-indigo-600",
-    "bg-gradient-to-r from-purple-500 to-pink-600",
-    "bg-gradient-to-r from-green-500 to-emerald-600",
-    "bg-gradient-to-r from-orange-500 to-red-600",
-    "bg-gradient-to-r from-teal-500 to-cyan-600",
-    "bg-gradient-to-r from-indigo-500 to-purple-600"
-  ];
-  return colors[index % colors.length];
-};
 
-// Helper function to get different background colors for industry cards
-const getIndustryBackgroundColor = (index: number) => {
-  const colors = [
-    "bg-gradient-to-br from-blue-50 to-indigo-100",
-    "bg-gradient-to-br from-purple-50 to-pink-100",
-    "bg-gradient-to-br from-green-50 to-emerald-100",
-    "bg-gradient-to-br from-orange-50 to-red-100",
-    "bg-gradient-to-br from-teal-50 to-cyan-100",
-    "bg-gradient-to-br from-indigo-50 to-purple-100"
-  ];
-  return colors[index % colors.length];
-};
 
 export default Industries;
 

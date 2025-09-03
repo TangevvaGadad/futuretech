@@ -9,7 +9,7 @@ type HeroVisualProps = {
 };
 
 export default function HeroVisual({
-  src = "/public/hero.gif",
+  src = "/hero.gif",
   alt = "AI generated person working on laptop"
 }: HeroVisualProps) {
   return (
@@ -27,8 +27,10 @@ export default function HeroVisual({
             alt={alt}
             width={520}
             height={520}
-            priority
-            className="object-cover"
+            priority={false}
+            loading="lazy"
+            unoptimized
+            className="object-cover will-change-transform"
           />
         </div>
       </motion.div>

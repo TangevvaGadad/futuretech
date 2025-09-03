@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 import { Linkedin } from "lucide-react";
 
 const Leadership = () => {
@@ -90,7 +90,7 @@ const Leadership = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
           className="mb-16"
         >
@@ -105,11 +105,11 @@ const Leadership = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
         >
-          {leadership.map((member, index) => (
+          {leadership.map((member) => (
             <motion.div
               key={member.name}
               variants={itemVariants}
@@ -125,10 +125,13 @@ const Leadership = () => {
                 <div className="relative z-10">
                   {/* Profile Image */}
                   <div className="w-full h-48 mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-gray-700 to-gray-600">
-                    <img
+                    <Image
                       src={member.image}
                       alt={member.name}
+                      width={400}
+                      height={192}
                       className="w-full h-full object-cover rounded-lg"
+                      loading="lazy"
                     />
                   </div>
                   

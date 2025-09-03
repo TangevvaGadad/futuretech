@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 type TinyGifProps = {
   src: string;
@@ -14,13 +15,14 @@ export default function TinyGif({ src, alt = "decorative gif", className, size =
   if (error) return null;
 
   return (
-    <img
+    <Image
       src={src}
       alt={alt}
       width={size}
       height={size}
       className={className}
       onError={() => setError(true)}
+      unoptimized
     />
   );
 }
