@@ -13,24 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FutureTech - Transforming Ideas into Technologies",
+  title: "FutureTech - Empowering Communities Through World-Class Technology",
   description: "FutureTech empowers communities worldwide with world-class technology, creates equal opportunities through education, and builds sustainable solutions that shape a brighter tomorrow.",
   keywords: ["technology", "innovation", "software development", "AI", "cloud solutions", "digital transformation"],
   authors: [{ name: "FutureTech" }],
   creator: "FutureTech",
   publisher: "FutureTech",
   robots: "index, follow",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://futuretech.com",
-    title: "FutureTech - Transforming Ideas into Technologies",
-    description: "Empowering communities worldwide with world-class technology and innovative solutions.",
-    siteName: "FutureTech",
-  },
+      openGraph: {
+      type: "website",
+      locale: "en_US",
+      url: "https://futuretech.com",
+      title: "FutureTech - Empowering Communities Through World-Class Technology",
+      description: "Empowering communities worldwide with world-class technology and innovative solutions.",
+      siteName: "FutureTech",
+    },
   twitter: {
     card: "summary_large_image",
-    title: "FutureTech - Transforming Ideas into Technologies",
+    title: "FutureTech - Empowering Communities Through World-Class Technology",
     description: "Empowering communities worldwide with world-class technology and innovative solutions.",
   },
 };

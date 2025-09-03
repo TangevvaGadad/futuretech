@@ -10,14 +10,14 @@ export default function HeroSection() {
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 py-16">
         
         {/* Left Content */}
-        <div className="max-w-xl">
-          <motion.div
+        <div className="max-w-2xl lg:ml-8">
+        <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="mb-4 inline-block rounded-full bg-purple-100 px-3 py-1 text-sm font-medium text-purple-700"
           >
-            FutureTech • Transforming Lives with Technology
+            FutureTech • Empowering Communities Through Technology
           </motion.div>
 
           <motion.h1
@@ -26,7 +26,7 @@ export default function HeroSection() {
             transition={{ duration: 1 }}
             className="text-4xl font-extrabold text-gray-900 leading-snug lg:text-5xl"
           >
-            We build world‑class solutions that empower communities and businesses
+            We transform bold ideas into breakthrough technologies that solve real problems and create opportunities worldwide
           </motion.h1>
 
           <motion.p
@@ -35,8 +35,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="mt-4 text-lg text-gray-600"
           >
-            From AI and Cloud to Product Innovation and Digital Transformation, we turn bold ideas into
-            technologies that create opportunity, drive growth, and deliver hope.
+            From AI and Cloud to Digital Transformation and Emerging Technologies, we deliver world-class solutions that empower communities, create equal opportunities, and build sustainable futures.
           </motion.p>
 
           {/* Industry chips */}
@@ -76,16 +75,49 @@ export default function HeroSection() {
           </div>
 
           {/* Trusted logos */}
-          <div className="mt-10 text-gray-600">
-            <p className="text-sm mb-3">Trusted by Top Companies</p>
-            <div className="flex gap-6 items-center opacity-80">
-              <Image src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" width={90} height={30} loading="lazy" />
-              <Image src="https://upload.wikimedia.org/wikipedia/commons/3/35/FedEx_Express.svg" alt="FedEx" width={90} height={30} loading="lazy" />
-              <Image src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width={90} height={30} loading="lazy" />
-              <Image src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" width={90} height={30} loading="lazy" />
-              <Image src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Airbnb_Logo_Bélo.svg" alt="Airbnb" width={90} height={30} loading="lazy" />
-            </div>
+{/* Trusted logos */}
+{/* Trusted logos - Animated Carousel */}
+<div className="mt-10 text-gray-600">
+  <p className="text-sm mb-3 text-center lg:text-left">Trusted by Global Companies</p>
+
+  <div className="relative w-full overflow-hidden">
+    <motion.div
+      className="flex gap-12"
+      animate={{ x: ["0%", "-100%"] }}
+      transition={{ ease: "linear", duration: 20, repeat: Infinity }}
+    >
+      {[
+        "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/3/35/FedEx_Express.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/9e/Airbnb_Logo_Bélo.svg",
+      ]
+        .concat([
+          // Duplicate for seamless loop
+          "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/3/35/FedEx_Express.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/9/9e/Airbnb_Logo_Bélo.svg",
+        ])
+        .map((src, i) => (
+          <div key={i} className="flex-shrink-0">
+            <Image
+              src={src}
+              alt="Company Logo"
+              width={120}
+              height={50}
+              className="opacity-80 hover:opacity-100 transition"
+              loading="lazy"
+            />
           </div>
+        ))}
+    </motion.div>
+  </div>
+</div>
+
+
         </div>
 
         {/* Right Side Image */}

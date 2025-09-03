@@ -18,7 +18,7 @@ const Services = () => {
       icon: Code,
       title: "Software Development",
       description:
-        "Custom web & mobile applications, enterprise solutions, and SaaS platforms built with cutting-edge technologies.",
+        "Custom web & mobile applications (iOS/Android), enterprise solutions (ERP, CRM, HRMS), and SaaS platforms built with cutting-edge technologies.",
       features: ["Web & Mobile Apps", "Enterprise Solutions", "SaaS & Cloud Apps"],
       bg: "bg-pink-100",
       iconBg: "bg-pink-500",
@@ -27,7 +27,7 @@ const Services = () => {
       icon: Cloud,
       title: "Cloud & IT Infrastructure",
       description:
-        "Scalable cloud solutions, DevOps practices, and comprehensive IT infrastructure management.",
+        "Scalable cloud solutions, DevOps practices, cybersecurity, backup solutions, and comprehensive IT infrastructure management.",
       features: ["Cloud Migration", "DevOps & Security", "Managed IT Services"],
       bg: "bg-indigo-100",
       iconBg: "bg-indigo-500",
@@ -36,7 +36,7 @@ const Services = () => {
       icon: Brain,
       title: "AI, Data & Emerging Tech",
       description:
-        "Leverage artificial intelligence, machine learning, and data analytics to drive innovation.",
+        "Leverage artificial intelligence, machine learning, NLP (chatbots, voice AI), computer vision, and data analytics to drive innovation.",
       features: ["AI/ML & NLP", "Computer Vision", "Blockchain & IoT"],
       bg: "bg-yellow-100",
       iconBg: "bg-yellow-500",
@@ -45,7 +45,7 @@ const Services = () => {
       icon: RefreshCw,
       title: "Digital Transformation",
       description:
-        "Transform your business processes with strategic IT consulting and automation solutions.",
+        "Transform your business processes with strategic IT consulting, process automation (RPA), and enterprise architecture solutions.",
       features: ["IT Consulting", "Process Automation", "Enterprise Architecture"],
       bg: "bg-green-100",
       iconBg: "bg-green-500",
@@ -54,7 +54,7 @@ const Services = () => {
       icon: Lightbulb,
       title: "Product Innovation",
       description:
-        "From concept to market, we help you build innovative products that make a difference.",
+        "From concept to market, we help you build innovative products including MVP & prototyping, API development, and AR/VR & Metaverse solutions.",
       features: ["MVP & Prototyping", "API Development", "AR/VR Solutions"],
       bg: "bg-purple-100",
       iconBg: "bg-purple-500",
@@ -63,7 +63,7 @@ const Services = () => {
       icon: Building,
       title: "Industry-specific Solutions",
       description:
-        "Tailored solutions for FinTech, Healthcare, E-commerce, Education, and Smart Cities.",
+        "Tailored solutions for FinTech, Healthcare, E-commerce, Education, Government, and Smart Cities with industry expertise.",
       features: ["FinTech Solutions", "Healthcare Tech", "Smart Cities"],
       bg: "bg-orange-100",
       iconBg: "bg-orange-500",
@@ -72,7 +72,7 @@ const Services = () => {
       icon: Headphones,
       title: "Enterprise IT Support",
       description:
-        "Comprehensive IT support services to keep your systems running smoothly and securely.",
+        "Comprehensive IT support services including 24/7 helpdesk, remote support, maintenance, upgrades, and QA & testing.",
       features: ["24/7 Helpdesk", "Remote Support", "QA & Testing"],
       bg: "bg-teal-100",
       iconBg: "bg-teal-500",
@@ -81,7 +81,7 @@ const Services = () => {
       icon: Palette,
       title: "UI/UX & Branding",
       description:
-        "Beautiful, intuitive designs that engage users and strengthen your brand identity.",
+        "Beautiful, intuitive designs for web & mobile applications, comprehensive branding, and digital identity solutions.",
       features: ["UI/UX Design", "Brand Identity", "Digital Marketing"],
       bg: "bg-red-100",
       iconBg: "bg-red-500",
@@ -120,15 +120,14 @@ const Services = () => {
             variants={itemVariants}
             className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6"
           >
-            Comprehensive{" "}
-            <span className="text-gradient">Technology Solutions</span>
+            World-Class{" "}
+            <span className="text-gradient">Technology Services</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="text-lg text-gray-600 max-w-3xl mx-auto"
           >
-            From software development to AI solutions, we provide end-to-end
-            technology services that drive innovation and growth.
+            From software development to emerging technologies, we provide comprehensive solutions that empower communities and drive sustainable growth worldwide.
           </motion.p>
         </motion.div>
 

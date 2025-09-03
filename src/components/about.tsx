@@ -23,29 +23,29 @@ const About = () => {
 
   const services = [
     {
-      title: "Client Acquisition Services",
-      desc: "We offer result-driven Client Acquisition Services to boost your online presence. From IT to social media, we help you grow your brand and reach the right audience.",
+      title: "Global Technology Solutions",
+      desc: "We deliver world-class technology solutions that empower communities worldwide. From software development to emerging technologies, we create opportunities and drive sustainable growth.",
       icon: Search,
       bg: "bg-pink-100",
       iconBg: "bg-pink-500",
     },
     {
-      title: "IT Solutions",
-      desc: "We deliver innovative IT solutions tailored to meet your business needs. From software development to tech support, we ensure seamless digital transformation.",
+      title: "Innovation & Emerging Tech",
+      desc: "We pioneer breakthrough solutions in AI, blockchain, IoT, and emerging technologies. Our innovations shape tomorrow's world and create sustainable futures.",
       icon: Monitor,
       bg: "bg-indigo-100",
       iconBg: "bg-indigo-500",
     },
     {
-      title: "Business Services",
-      desc: "We offer comprehensive business services to streamline your operations and drive growth. From strategy to execution, we support your success every step of the way.",
+      title: "Community Empowerment",
+      desc: "We create equal opportunities for refugees and underserved groups through education and technology. Our solutions uplift communities and drive positive change.",
       icon: Briefcase,
       bg: "bg-yellow-100",
       iconBg: "bg-yellow-500",
     },
     {
-      title: "Consulting Services",
-      desc: "We provide expert consulting services to help you make informed, strategic decisions. Our tailored solutions drive efficiency, growth, and long-term success.",
+      title: "Sustainable Development",
+      desc: "We build sustainable solutions that shape a brighter tomorrow. Our technology-driven approach ensures long-term impact and environmental responsibility.",
       icon: LayoutDashboard,
       bg: "bg-green-100",
       iconBg: "bg-green-500",
@@ -67,14 +67,14 @@ const About = () => {
             variants={itemVariants}
             className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6"
           >
-            Our Specialized Services for{" "}
-            <span className="text-gradient">Architects & Interior Designers</span>
+            Our Mission to{" "}
+            <span className="text-gradient">Empower Communities Worldwide</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
-            Our expert team specializes in delivering tailored solutions designed to elevate your brand and drive measurable results.
+            We are innovators, creators, and problem-solvers who transform bold ideas into technologies that solve real problems, create opportunities, and deliver hope to communities worldwide.
           </motion.p>
         </motion.div>
 

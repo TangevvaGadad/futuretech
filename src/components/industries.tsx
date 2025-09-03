@@ -1,91 +1,82 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  GraduationCap, 
-  Radio, 
-  Zap, 
-  Heart, 
+import {
+  GraduationCap,
+  Radio,
+  Zap,
+  Heart,
   Monitor,
-  TrendingUp
+  TrendingUp,
 } from "lucide-react";
 
 const Industries = () => {
-  const industries = [
-    {
-      icon: GraduationCap,
-      title: "Education & EdTech",
-      description: "Revolutionizing learning through innovative educational technology solutions that make quality education accessible to all.",
-      features: ["Learning Management Systems", "Virtual Classrooms", "Student Analytics", "Mobile Learning Apps"],
-      gradient: "gradient-primary",
-      color: "text-blue-600"
-    },
-    {
-      icon: Radio,
-      title: "Telecom & Media",
-      description: "Enabling seamless communication and media experiences with cutting-edge telecommunications and broadcasting solutions.",
-      features: ["5G Network Solutions", "Streaming Platforms", "Content Management", "IoT Connectivity"],
-      gradient: "gradient-secondary",
-      color: "text-purple-600"
-    },
-    {
-      icon: Zap,
-      title: "Energy & Sustainability",
-      description: "Powering the future with sustainable energy solutions and smart grid technologies for a greener tomorrow.",
-      features: ["Smart Grid Systems", "Renewable Energy", "Energy Analytics", "IoT Monitoring"],
-      gradient: "gradient-accent",
-      color: "text-green-600"
-    },
-    {
-      icon: Heart,
-      title: "Healthcare & Life Sciences",
-      description: "Transforming healthcare delivery through digital health solutions, telemedicine, and medical technology innovations.",
-      features: ["Telemedicine Platforms", "Health Records", "Medical Devices", "AI Diagnostics"],
-      gradient: "gradient-primary",
-      color: "text-red-600"
-    },
-    {
-      icon: Monitor,
-      title: "Information Technology",
-      description: "Empowering businesses with comprehensive IT solutions, cloud infrastructure, and digital transformation services.",
-      features: ["Cloud Solutions", "Cybersecurity", "Data Analytics", "System Integration"],
-      gradient: "gradient-secondary",
-      color: "text-indigo-600"
-    },
-    {
-      icon: TrendingUp,
-      title: "Emerging Technologies",
-      description: "Pioneering the future with AI, blockchain, IoT, and other emerging technologies that shape tomorrow's world.",
-      features: ["Artificial Intelligence", "Blockchain Solutions", "IoT Platforms", "AR/VR Applications"],
-      gradient: "gradient-accent",
-      color: "text-orange-600"
-    }
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
+      transition: { staggerChildren: 0.2 },
+    },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
+      transition: { duration: 0.6 },
+    },
   };
+
+  const industries = [
+    {
+      title: "Education & EdTech",
+      desc: "Revolutionizing learning through innovative educational technology solutions that make quality education accessible to all.",
+      icon: GraduationCap,
+      bg: "bg-blue-100",
+      iconBg: "bg-blue-500",
+    },
+    {
+      title: "Telecom & Media",
+      desc: "Enabling seamless communication and media experiences with cutting-edge telecommunications and broadcasting solutions.",
+      icon: Radio,
+      bg: "bg-purple-100",
+      iconBg: "bg-purple-500",
+    },
+    {
+      title: "Energy & Sustainability",
+      desc: "Powering the future with sustainable energy solutions and smart grid technologies for a greener tomorrow.",
+      icon: Zap,
+      bg: "bg-green-100",
+      iconBg: "bg-green-500",
+    },
+    {
+      title: "Healthcare & Life Sciences",
+      desc: "Transforming healthcare delivery through digital health solutions, telemedicine, and medical technology innovations.",
+      icon: Heart,
+      bg: "bg-red-100",
+      iconBg: "bg-red-500",
+    },
+    {
+      title: "Information Technology",
+      desc: "Empowering businesses with comprehensive IT solutions, cloud infrastructure, and digital transformation services.",
+      icon: Monitor,
+      bg: "bg-indigo-100",
+      iconBg: "bg-indigo-500",
+    },
+    {
+      title: "Emerging Technologies",
+      desc: "Pioneering the future with AI, blockchain, IoT, and other emerging technologies that shape tomorrow's world.",
+      icon: TrendingUp,
+      bg: "bg-orange-100",
+      iconBg: "bg-orange-500",
+    },
+  ];
 
   return (
     <section id="industries" className="py-20 bg-soft">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Section Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -93,24 +84,23 @@ const Industries = () => {
           variants={containerVariants}
           className="text-center mb-16"
         >
-          <motion.div variants={itemVariants} className="mb-4">
-            <span className="badge-theme">Industries We Serve</span>
-          </motion.div>
-          <motion.h2 
+          <motion.h2
             variants={itemVariants}
             className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6"
           >
-            Transforming <span className="text-gradient">Diverse Industries</span>
+            Empowering{" "}
+            <span className="text-gradient">Global Industries</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
-            We work across multiple industries, bringing innovative technology solutions 
-            that drive growth, efficiency, and positive change.
+            We work across multiple industries worldwide, bringing innovative technology
+            solutions that drive growth, efficiency, and create equal opportunities for communities.
           </motion.p>
         </motion.div>
 
+        {/* Industries Grid */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -118,109 +108,30 @@ const Industries = () => {
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {industries.map((industry) => (
+          {industries.map((industry, idx) => (
             <motion.div
-              key={industry.title}
+              key={idx}
               variants={itemVariants}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="group"
+              whileHover={{ scale: 1.05, y: -5 }}
+              className={`${industry.bg} p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500`}
             >
-              <div className="card-theme p-8 h-full bg-white relative overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                  <div className={`w-full h-full ${industry.gradient} rounded-full blur-3xl`} />
-                </div>
-                
-                <div className="relative z-10">
-                  <div className={`w-16 h-16 ${industry.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <industry.icon className="w-8 h-8 text-white" />
-                  </div>
-                  
-                  <h3 className={`text-2xl font-bold mb-4 group-hover:${industry.color} transition-colors duration-300`}>
-                    {industry.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    {industry.description}
-                  </p>
-                  
-                  <div className="space-y-3">
-                    {industry.features.map((feature, featureIndex) => (
-                      <motion.div 
-                        key={featureIndex}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.35, delay: featureIndex * 0.06, ease: "easeOut" }}
-                        className="flex items-center space-x-3"
-                      >
-                        <div className={`w-2 h-2 ${industry.gradient} rounded-full`} />
-                        <span className="text-sm text-gray-600 font-medium">{feature}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
+              <div
+                className={`${industry.iconBg} w-16 h-16 flex items-center justify-center rounded-xl mb-6`}
+              >
+                <industry.icon className="w-8 h-8 text-white" />
               </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {industry.title}
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {industry.desc}
+              </p>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Stats Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="mt-20"
-        >
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Industry <span className="text-gradient">Impact</span>
-            </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our solutions have transformed businesses across these industries
-            </p>
-          </motion.div>
-
-          <motion.div 
-            variants={itemVariants}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
-          >
-            {[
-              { number: "200+", label: "Education Projects", color: "from-blue-500 to-indigo-600", bgColor: "from-blue-50 to-indigo-100" },
-              { number: "150+", label: "Healthcare Solutions", color: "from-purple-500 to-pink-600", bgColor: "from-purple-50 to-pink-100" },
-              { number: "100+", label: "Energy Systems", color: "from-green-500 to-emerald-600", bgColor: "from-green-50 to-emerald-100" },
-              { number: "300+", label: "IT Implementations", color: "from-orange-500 to-red-600", bgColor: "from-orange-50 to-red-100" }
-            ].map((stat) => (
-              <motion.div
-                key={stat.label}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="text-center p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden group"
-                style={{ background: `linear-gradient(135deg, ${stat.bgColor.split(' ')[1]}, ${stat.bgColor.split(' ')[3]})` }}
-              >
-                {/* Background Pattern */}
-                <div className="absolute top-0 right-0 w-24 h-24 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                  <div className={`w-full h-full bg-gradient-to-r ${stat.color} rounded-full blur-2xl`} />
-                </div>
-                
-                <div className="relative z-10">
-                  <div className={`text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-600 font-medium text-sm">
-                    {stat.label}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
     </section>
   );
 };
 
-
-
 export default Industries;
-
