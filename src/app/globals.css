@@ -151,6 +151,24 @@
 }
 
 @layer utilities {
+  /* Site theme utilities aligned with hero */
+  .bg-soft {
+    background: linear-gradient(180deg, #f3f0ff 0%, #e6f7ff 100%);
+  }
+  .card-theme {
+    @apply bg-white/90 border border-gray-200 shadow-sm rounded-2xl transition-all duration-500 hover:shadow-xl hover:-translate-y-0.5;
+  }
+  .badge-theme {
+    @apply inline-flex items-center rounded-full bg-purple-100 text-purple-700 px-3 py-1 text-sm font-medium;
+  }
+  .cta-primary {
+    @apply inline-flex items-center gap-2 rounded-full text-white px-6 py-3 font-semibold shadow-lg transition;
+    background: linear-gradient(90deg, #7c3aed 0%, #3b82f6 100%);
+  }
+  .cta-primary:hover { filter: brightness(1.05); }
+  .cta-outline {
+    @apply inline-flex items-center gap-2 rounded-full border-2 border-purple-500 text-purple-600 px-6 py-3 font-semibold transition hover:bg-purple-50;
+  }
   .gradient-primary {
     background: var(--gradient-primary);
   }

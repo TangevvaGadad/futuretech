@@ -51,7 +51,7 @@ const Footer = () => {
   return (
     <footer id="contact" className="bg-gray-900 text-white">
       {/* Newsletter Section */}
-      <div className="bg-gradient-to-r from-primary/20 to-secondary/20 py-16">
+      <div className="py-16" style={{ background: "linear-gradient(90deg,#7c3aed22,#3b82f622)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -135,7 +135,7 @@ const Footer = () => {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-gray-400 hover:text-white transition-colors duration-200"
+                        className="text-gray-400 hover-link"
                       >
                         {link.name}
                       </a>

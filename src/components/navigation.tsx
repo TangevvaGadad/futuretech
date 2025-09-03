@@ -31,7 +31,7 @@ const Navigation = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-200"
+          ? "bg-white/70 backdrop-blur-md shadow-lg border-b border-gray-200"
           : "bg-transparent"
       }`}
     >
@@ -55,9 +55,10 @@ const Navigation = () => {
                 key={item.name}
                 href={item.href}
                 whileHover={{ y: -2 }}
-                className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
+                className="relative text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.name}
+                <span className="pointer-events-none absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
             <Button className="gradient-primary hover:opacity-90 transition-opacity">

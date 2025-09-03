@@ -87,7 +87,7 @@ const Industries = () => {
   };
 
   return (
-    <section id="industries" className="py-20 bg-gray-50">
+    <section id="industries" className="py-20 bg-soft">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -97,9 +97,7 @@ const Industries = () => {
           className="text-center mb-16"
         >
           <motion.div variants={itemVariants} className="mb-4">
-            <Badge className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-              Industries We Serve
-            </Badge>
+            <span className="badge-theme">Industries We Serve</span>
           </motion.div>
           <motion.h2 
             variants={itemVariants}
@@ -123,25 +121,25 @@ const Industries = () => {
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {industries.map((industry, index) => (
+          {industries.map((industry) => (
             <motion.div
               key={industry.title}
               variants={itemVariants}
               whileHover={{ y: -8, scale: 1.02 }}
               className="group"
             >
-              <Card className={`p-8 h-full hover:shadow-2xl transition-all duration-500 border-0 relative overflow-hidden group ${getIndustryBackgroundColor(index)}`}>
+              <div className="card-theme p-8 h-full bg-white relative overflow-hidden">
                 {/* Background Pattern */}
                 <div className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                  <div className={`w-full h-full ${getIndustryColor(index)} rounded-full blur-3xl`} />
+                  <div className={`w-full h-full ${industry.gradient} rounded-full blur-3xl`} />
                 </div>
                 
                 <div className="relative z-10">
-                  <div className={`w-16 h-16 ${getIndustryColor(index)} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 ${industry.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <industry.icon className="w-8 h-8 text-white" />
                   </div>
                   
-                  <h3 className={`text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300`}>
+                  <h3 className={`text-2xl font-bold mb-4 group-hover:${industry.color} transition-colors duration-300`}>
                     {industry.title}
                   </h3>
                   
@@ -158,13 +156,13 @@ const Industries = () => {
                         transition={{ delay: featureIndex * 0.1 }}
                         className="flex items-center space-x-3"
                       >
-                        <div className={`w-2 h-2 ${getIndustryColor(index)} rounded-full`} />
+                        <div className={`w-2 h-2 ${industry.gradient} rounded-full`} />
                         <span className="text-sm text-gray-600 font-medium">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
                 </div>
-              </Card>
+              </div>
             </motion.div>
           ))}
         </motion.div>
