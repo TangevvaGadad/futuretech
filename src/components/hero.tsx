@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 py-16">
         
         {/* Left Content */}
-        <div className="max-w-2xl lg:ml-8">
+        <div className="max-w-4xl lg:ml-8">
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -131,10 +131,10 @@ export default function HeroSection() {
           <Image
             src="/boy.png"
             alt="Hero visual"
-            width={720}
-            height={720}
+            width={920}
+            height={1120}
             priority={false}
-            className="relative z-10"
+            className="relative z-10 scale-110 -translate-y-30"
           />
         </motion.div>
       </div>

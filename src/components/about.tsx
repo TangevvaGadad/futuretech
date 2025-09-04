@@ -1,7 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Monitor, Briefcase, LayoutDashboard } from "lucide-react";
+import Lottie from "lottie-react";
+
+// Import your Lottie JSON files (you’ll need to download some free ones from lottiefiles.com)
+import globalTechAnim from "../lotties/Global.json";
+import innovationAnim from "../lotties/Bulb.json";
+import communityAnim from "../lotties/community.json";
+import sustainabilityAnim from "../lotties/sustain.json";
 
 const About = () => {
   const containerVariants = {
@@ -25,35 +31,31 @@ const About = () => {
     {
       title: "Global Technology Solutions",
       desc: "We deliver world-class technology solutions that empower communities worldwide. From software development to emerging technologies, we create opportunities and drive sustainable growth.",
-      icon: Search,
-      bg: "bg-pink-100",
-      iconBg: "bg-pink-500",
+      animation: globalTechAnim,
+      bg: "bg-gradient-to-br from-pink-50 to-pink-100",
     },
     {
       title: "Innovation & Emerging Tech",
       desc: "We pioneer breakthrough solutions in AI, blockchain, IoT, and emerging technologies. Our innovations shape tomorrow's world and create sustainable futures.",
-      icon: Monitor,
-      bg: "bg-indigo-100",
-      iconBg: "bg-indigo-500",
+      animation: innovationAnim,
+      bg: "bg-gradient-to-br from-indigo-50 to-indigo-100",
     },
     {
       title: "Community Empowerment",
       desc: "We create equal opportunities for refugees and underserved groups through education and technology. Our solutions uplift communities and drive positive change.",
-      icon: Briefcase,
-      bg: "bg-yellow-100",
-      iconBg: "bg-yellow-500",
+      animation: communityAnim,
+      bg: "bg-gradient-to-br from-yellow-50 to-yellow-100",
     },
     {
       title: "Sustainable Development",
       desc: "We build sustainable solutions that shape a brighter tomorrow. Our technology-driven approach ensures long-term impact and environmental responsibility.",
-      icon: LayoutDashboard,
-      bg: "bg-green-100",
-      iconBg: "bg-green-500",
+      animation: sustainabilityAnim,
+      bg: "bg-gradient-to-br from-green-50 to-green-100",
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-soft">
+    <section id="about" className="py-20 bg-soft relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -74,11 +76,13 @@ const About = () => {
             variants={itemVariants}
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
-            We are innovators, creators, and problem-solvers who transform bold ideas into technologies that solve real problems, create opportunities, and deliver hope to communities worldwide.
+            We are innovators, creators, and problem-solvers who transform bold
+            ideas into technologies that solve real problems, create
+            opportunities, and deliver hope to communities worldwide.
           </motion.p>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Services Grid with Lottie Animations */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -91,17 +95,19 @@ const About = () => {
               key={idx}
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -5 }}
-              className={`${service.bg} p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500`}
+              className={`${service.bg} p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500`}
             >
-              <div
-                className={`${service.iconBg} w-16 h-16 flex items-center justify-center rounded-xl mb-6`}
-              >
-                <service.icon className="w-8 h-8 text-white" />
+              {/* Lottie Animation */}
+              <div className="w-28 h-28 mx-auto mb-6">
+                <Lottie animationData={service.animation} loop={true} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
                 {service.title}
               </h3>
-              <p className="text-gray-700 leading-relaxed">{service.desc}</p>
+              <p className="text-gray-700 leading-relaxed text-center">
+                {service.desc}
+              </p>
             </motion.div>
           ))}
         </motion.div>
