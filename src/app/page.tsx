@@ -6,6 +6,7 @@ import Industries from "@/components/industries";
 import Leadership from "@/components/leadership";
 import Footer from "@/components/footer";
 import Contact from "@/components/contact";
+import OurWork from "@/components/ourwork";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <About />
       <Services />
       <Industries />
+      <OurWork />
       <Leadership />
       <Contact />
       <Footer />

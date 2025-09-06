@@ -29,7 +29,7 @@ const Contact = () => {
       id="contact"
       className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden"
     >
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial="hidden"
@@ -53,57 +53,61 @@ const Contact = () => {
           </motion.p>
         </motion.div>
 
-        {/* Contact Form */}
-        <motion.form
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={containerVariants}
-          className="bg-white p-8 rounded-3xl shadow-lg grid gap-6"
-        >
-          <motion.div variants={itemVariants}>
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="Your full name" className="mt-2" />
-          </motion.div>
+        {/* Two-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Contact Form */}
+          <motion.form
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={containerVariants}
+            className="bg-white p-8 rounded-3xl shadow-lg grid gap-6"
+          >
+            <motion.div variants={itemVariants}>
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" placeholder="Your full name" className="mt-2" />
+            </motion.div>
 
-          <motion.div variants={itemVariants}>
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="your@email.com"
-              className="mt-2"
-            />
-          </motion.div>
+            <motion.div variants={itemVariants}>
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="your@email.com"
+                className="mt-2"
+              />
+            </motion.div>
 
-          <motion.div variants={itemVariants}>
-            <Label htmlFor="message">Message</Label>
-            <Textarea
-              id="message"
-              placeholder="Your message..."
-              className="mt-2"
-              rows={5}
-            />
-          </motion.div>
+            <motion.div variants={itemVariants}>
+              <Label htmlFor="message">Message</Label>
+              <Textarea
+                id="message"
+                placeholder="Your message..."
+                className="mt-2"
+                rows={5}
+              />
+            </motion.div>
 
-          <motion.div variants={itemVariants} className="text-center mt-4">
-            <Button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 shadow-lg hover:shadow-2xl transition-all duration-500">
-              Send Message
-            </Button>
-          </motion.div>
-        </motion.form>
+            <motion.div variants={itemVariants} className="text-center mt-4">
+              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 shadow-lg hover:shadow-2xl transition-all duration-500">
+                Send Message
+              </Button>
+            </motion.div>
+          </motion.form>
 
-        {/* Lottie Animation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 flex justify-center"
-        >
-          <div className="w-48 h-48">
-            <Lottie animationData={contactAnim} loop={true} />
-          </div>
-        </motion.div>
+          {/* Right Side - Lottie Animation */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex justify-center lg:justify-end"
+          >
+            <div className="w-56 h-56 md:w-72 md:h-72">
+              <Lottie animationData={contactAnim} loop={true} />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
