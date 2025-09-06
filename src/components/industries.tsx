@@ -1,14 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  GraduationCap,
-  Radio,
-  Zap,
-  Heart,
-  Monitor,
-  TrendingUp,
-} from "lucide-react";
+import Lottie from "lottie-react";
+
+// Import your Lottie JSONs (download from lottiefiles.com and save in /lotties folder)
+import educationAnim from "../lotties/education.json";
+import telecomAnim from "../lotties/telecom.json";
+import energyAnim from "../lotties/energy.json";
+import healthcareAnim from "../lotties/healthcare.json";
+import itAnim from "../lotties/it.json";
+import emergingAnim from "../lotties/emerging.json";
 
 const Industries = () => {
   const containerVariants = {
@@ -32,44 +33,38 @@ const Industries = () => {
     {
       title: "Education & EdTech",
       desc: "Revolutionizing learning through innovative educational technology solutions that make quality education accessible to all.",
-      icon: GraduationCap,
+      anim: educationAnim,
       bg: "bg-blue-100",
-      iconBg: "bg-blue-500",
     },
     {
       title: "Telecom & Media",
       desc: "Enabling seamless communication and media experiences with cutting-edge telecommunications and broadcasting solutions.",
-      icon: Radio,
+      anim: telecomAnim,
       bg: "bg-purple-100",
-      iconBg: "bg-purple-500",
     },
     {
       title: "Energy & Sustainability",
       desc: "Powering the future with sustainable energy solutions and smart grid technologies for a greener tomorrow.",
-      icon: Zap,
+      anim: energyAnim,
       bg: "bg-green-100",
-      iconBg: "bg-green-500",
     },
     {
       title: "Healthcare & Life Sciences",
       desc: "Transforming healthcare delivery through digital health solutions, telemedicine, and medical technology innovations.",
-      icon: Heart,
+      anim: healthcareAnim,
       bg: "bg-red-100",
-      iconBg: "bg-red-500",
     },
     {
       title: "Information Technology",
       desc: "Empowering businesses with comprehensive IT solutions, cloud infrastructure, and digital transformation services.",
-      icon: Monitor,
+      anim: itAnim,
       bg: "bg-indigo-100",
-      iconBg: "bg-indigo-500",
     },
     {
       title: "Emerging Technologies",
       desc: "Pioneering the future with AI, blockchain, IoT, and other emerging technologies that shape tomorrow's world.",
-      icon: TrendingUp,
+      anim: emergingAnim,
       bg: "bg-orange-100",
-      iconBg: "bg-orange-500",
     },
   ];
 
@@ -95,8 +90,9 @@ const Industries = () => {
             variants={itemVariants}
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
-            We work across multiple industries worldwide, bringing innovative technology
-            solutions that drive growth, efficiency, and create equal opportunities for communities.
+            We work across multiple industries worldwide, bringing innovative
+            technology solutions that drive growth, efficiency, and create equal
+            opportunities for communities.
           </motion.p>
         </motion.div>
 
@@ -113,13 +109,13 @@ const Industries = () => {
               key={idx}
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -5 }}
-              className={`${industry.bg} p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500`}
+              className={`${industry.bg} p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center`}
             >
-              <div
-                className={`${industry.iconBg} w-16 h-16 flex items-center justify-center rounded-xl mb-6`}
-              >
-                <industry.icon className="w-8 h-8 text-white" />
+              {/* Centered Lottie */}
+              <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                <Lottie animationData={industry.anim} loop={true} />
               </div>
+
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {industry.title}
               </h3>

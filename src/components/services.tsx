@@ -1,90 +1,83 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Code,
-  Cloud,
-  Brain,
-  RefreshCw,
-  Lightbulb,
-  Building,
-  Headphones,
-  Palette,
-} from "lucide-react";
+import Lottie from "lottie-react";
+
+// Import your Lottie JSONs (download from lottiefiles.com and save in /lotties folder)
+import softwareAnim from "../lotties/software.json";
+import cloudAnim from "../lotties/cloud.json";
+import aiAnim from "../lotties/ai.json";
+import digitalAnim from "../lotties/digital.json";
+import productAnim from "../lotties/product.json";
+import industryAnim from "../lotties/industry.json";
+import supportAnim from "../lotties/support.json";
+import designAnim from "../lotties/design.json";
 
 const Services = () => {
   const services = [
     {
-      icon: Code,
+      anim: softwareAnim,
       title: "Software Development",
       description:
         "Custom web & mobile applications (iOS/Android), enterprise solutions (ERP, CRM, HRMS), and SaaS platforms built with cutting-edge technologies.",
       features: ["Web & Mobile Apps", "Enterprise Solutions", "SaaS & Cloud Apps"],
       bg: "bg-pink-100",
-      iconBg: "bg-pink-500",
     },
     {
-      icon: Cloud,
+      anim: cloudAnim,
       title: "Cloud & IT Infrastructure",
       description:
         "Scalable cloud solutions, DevOps practices, cybersecurity, backup solutions, and comprehensive IT infrastructure management.",
       features: ["Cloud Migration", "DevOps & Security", "Managed IT Services"],
       bg: "bg-indigo-100",
-      iconBg: "bg-indigo-500",
     },
     {
-      icon: Brain,
+      anim: aiAnim,
       title: "AI, Data & Emerging Tech",
       description:
         "Leverage artificial intelligence, machine learning, NLP (chatbots, voice AI), computer vision, and data analytics to drive innovation.",
       features: ["AI/ML & NLP", "Computer Vision", "Blockchain & IoT"],
       bg: "bg-yellow-100",
-      iconBg: "bg-yellow-500",
     },
     {
-      icon: RefreshCw,
+      anim: digitalAnim,
       title: "Digital Transformation",
       description:
         "Transform your business processes with strategic IT consulting, process automation (RPA), and enterprise architecture solutions.",
       features: ["IT Consulting", "Process Automation", "Enterprise Architecture"],
       bg: "bg-green-100",
-      iconBg: "bg-green-500",
     },
     {
-      icon: Lightbulb,
+      anim: productAnim,
       title: "Product Innovation",
       description:
         "From concept to market, we help you build innovative products including MVP & prototyping, API development, and AR/VR & Metaverse solutions.",
       features: ["MVP & Prototyping", "API Development", "AR/VR Solutions"],
       bg: "bg-purple-100",
-      iconBg: "bg-purple-500",
     },
     {
-      icon: Building,
+      anim: industryAnim,
       title: "Industry-specific Solutions",
       description:
         "Tailored solutions for FinTech, Healthcare, E-commerce, Education, Government, and Smart Cities with industry expertise.",
       features: ["FinTech Solutions", "Healthcare Tech", "Smart Cities"],
       bg: "bg-orange-100",
-      iconBg: "bg-orange-500",
     },
     {
-      icon: Headphones,
+      anim: supportAnim,
       title: "Enterprise IT Support",
       description:
         "Comprehensive IT support services including 24/7 helpdesk, remote support, maintenance, upgrades, and QA & testing.",
       features: ["24/7 Helpdesk", "Remote Support", "QA & Testing"],
       bg: "bg-teal-100",
-      iconBg: "bg-teal-500",
     },
     {
-      icon: Palette,
+      anim: designAnim,
       title: "UI/UX & Branding",
       description:
         "Beautiful, intuitive designs for web & mobile applications, comprehensive branding, and digital identity solutions.",
       features: ["UI/UX Design", "Brand Identity", "Digital Marketing"],
       bg: "bg-red-100",
-      iconBg: "bg-red-500",
     },
   ];
 
@@ -127,7 +120,9 @@ const Services = () => {
             variants={itemVariants}
             className="text-lg text-gray-600 max-w-3xl mx-auto"
           >
-            From software development to emerging technologies, we provide comprehensive solutions that empower communities and drive sustainable growth worldwide.
+            From software development to emerging technologies, we provide
+            comprehensive solutions that empower communities and drive
+            sustainable growth worldwide.
           </motion.p>
         </motion.div>
 
@@ -144,20 +139,20 @@ const Services = () => {
               key={index}
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -5 }}
-              className={`${service.bg} p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500`}
+              className={`${service.bg} p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center`}
             >
-              <div
-                className={`${service.iconBg} w-16 h-16 flex items-center justify-center rounded-xl mb-6`}
-              >
-                <service.icon className="w-8 h-8 text-white" />
+              {/* Centered Lottie */}
+              <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                <Lottie animationData={service.anim} loop={true} />
               </div>
+
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
                 {service.title}
               </h3>
               <p className="text-gray-700 text-sm mb-4">
                 {service.description}
               </p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-left inline-block">
                 {service.features.map((feature, fIdx) => (
                   <li
                     key={fIdx}
