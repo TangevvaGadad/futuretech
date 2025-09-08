@@ -25,7 +25,10 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -35,11 +38,18 @@ const Contact = () => {
           variants={containerVariants}
           className="text-center mb-16"
         >
-          <motion.h2 variants={itemVariants} className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          <motion.h2
+            variants={itemVariants}
+            className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6"
+          >
             Get in <span className="text-gradient">Touch with Us</span>
           </motion.h2>
-          <motion.p variants={itemVariants} className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Have questions, ideas, or collaboration opportunities? Send us a message and we’ll get back to you soon!
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+          >
+            Have questions, ideas, or collaboration opportunities? Send us a
+            message and we’ll get back to you soon!
           </motion.p>
         </motion.div>
 
@@ -51,24 +61,60 @@ const Contact = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={containerVariants}
-            className="bg-white p-8 rounded-3xl shadow-lg grid gap-6"
+            className="bg-white p-8 rounded-3xl shadow-lg flex flex-col space-y-6"
           >
             <motion.div variants={itemVariants}>
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Your full name" className="mt-2" />
+              <Label htmlFor="firstName">Firstname</Label>
+              <Input
+                id="firstName"
+                placeholder="Your first name"
+                className="mt-2"
+              />
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <Label htmlFor="lastName">Lastname</Label>
+              <Input
+                id="lastName"
+                placeholder="Your last name"
+                className="mt-2"
+              />
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <Label htmlFor="phone">Phone Number</Label>
+              <Input
+                id="phone"
+                type="tel"
+                placeholder="Your phone number"
+                className="mt-2"
+              />
             </motion.div>
 
             <motion.div variants={itemVariants}>
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="your@email.com" className="mt-2" />
+              <Input
+                id="email"
+                type="email"
+                placeholder="your@email.com"
+                className="mt-2"
+              />
             </motion.div>
 
             <motion.div variants={itemVariants}>
               <Label htmlFor="message">Message</Label>
-              <Textarea id="message" placeholder="Your message..." className="mt-2" rows={5} />
+              <Textarea
+                id="message"
+                placeholder="Your message..."
+                className="mt-2"
+                rows={5}
+              />
             </motion.div>
 
-            <motion.div variants={itemVariants} className="text-center mt-4">
+            <motion.div
+              variants={itemVariants}
+              className="flex justify-center pt-4"
+            >
               <Button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 shadow-lg hover:shadow-2xl transition-all duration-500">
                 Send Message
               </Button>

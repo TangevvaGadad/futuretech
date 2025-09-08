@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react"
 import { useState } from "react"
@@ -12,7 +11,7 @@ const contactInfo = [
     icon: <Mail className="w-6 h-6" />,
     title: "Email Us",
     details: "hello@gaadaviconsulting.com",
-    subtitle: "We'll respond within 24 hours",
+    subtitle: "We&apos;ll respond within 24 hours",
     gradient: "from-pink-200 to-pink-300",
   },
   {
@@ -48,7 +47,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
     console.log("Form submitted:", formData)
   }
 
@@ -60,13 +58,16 @@ export default function ContactPage() {
   }
 
   return (
-    
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
       {/* Hero Section */}
       <Navigation />
       <section className="pt-32 pb-20 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6">
               Get In{" "}
               <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 bg-clip-text text-transparent">
@@ -74,7 +75,7 @@ export default function ContactPage() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-              Ready to transform your business? Let's discuss how we can help you achieve your goals and drive
+              Ready to transform your business? Let&apos;s discuss how we can help you achieve your goals and drive
               sustainable growth.
             </p>
           </motion.div>
@@ -123,7 +124,9 @@ export default function ContactPage() {
           >
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Send us a Message</h2>
-              <p className="text-gray-600">Fill out the form below and we'll get back to you as soon as possible.</p>
+              <p className="text-gray-600">
+                Fill out the form below and we&apos;ll get back to you as soon as possible.
+              </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -200,7 +203,9 @@ export default function ContactPage() {
           >
             <div className="mb-6">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Find Our Office</h2>
-              <p className="text-gray-600 mb-4">Visit us at our headquarters in the heart of New York City.</p>
+              <p className="text-gray-600 mb-4">
+                Visit us at our headquarters in the heart of New York City.
+              </p>
               <div className="flex items-center text-gray-700">
                 <MapPin className="w-5 h-5 mr-2 text-purple-600" />
                 123 Business Ave, Suite 100, New York, NY 10001
@@ -251,9 +256,11 @@ export default function ContactPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Ready to Start Your Project?
+            </h2>
             <p className="text-xl text-purple-100 mb-8">
-              Let's schedule a consultation to discuss your needs and explore how we can help transform your business.
+              Let&apos;s schedule a consultation to discuss your needs and explore how we can help transform your business.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

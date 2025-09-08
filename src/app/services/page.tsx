@@ -102,7 +102,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {services.map((service, index) => (
+            {services.map((service) => (
               <motion.div
                 key={service.title}
                 variants={itemVariants}
@@ -145,7 +145,7 @@ export default function ServicesPage() {
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
             <p className="text-xl text-purple-100 mb-8">
-              Let's discuss how our services can help you achieve your goals and drive sustainable growth.
+              Let&apos;s discuss how our services can help you achieve your goals and drive sustainable growth.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

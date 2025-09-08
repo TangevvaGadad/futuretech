@@ -11,7 +11,7 @@ export default function HeroSection() {
         
         {/* Left Content */}
         <div className="max-w-4xl lg:ml-8">
-        <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -73,51 +73,6 @@ export default function HeroSection() {
               Talk to an Expert <ArrowRight size={18} />
             </a>
           </div>
-
-          {/* Trusted logos */}
-{/* Trusted logos */}
-{/* Trusted logos - Animated Carousel */}
-<div className="mt-10 text-gray-600">
-  <p className="text-sm mb-3 text-center lg:text-left">Trusted by Global Companies</p>
-
-  <div className="relative w-full overflow-hidden">
-    <motion.div
-      className="flex gap-12"
-      animate={{ x: ["0%", "-100%"] }}
-      transition={{ ease: "linear", duration: 20, repeat: Infinity }}
-    >
-      {[
-        "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-        "https://upload.wikimedia.org/wikipedia/commons/3/35/FedEx_Express.svg",
-        "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-        "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-        "https://upload.wikimedia.org/wikipedia/commons/9/9e/Airbnb_Logo_Bélo.svg",
-      ]
-        .concat([
-          // Duplicate for seamless loop
-          "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-          "https://upload.wikimedia.org/wikipedia/commons/3/35/FedEx_Express.svg",
-          "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-          "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-          "https://upload.wikimedia.org/wikipedia/commons/9/9e/Airbnb_Logo_Bélo.svg",
-        ])
-        .map((src, i) => (
-          <div key={i} className="flex-shrink-0">
-            <Image
-              src={src}
-              alt="Company Logo"
-              width={120}
-              height={50}
-              className="opacity-80 hover:opacity-100 transition"
-              loading="lazy"
-            />
-          </div>
-        ))}
-    </motion.div>
-  </div>
-</div>
-
-
         </div>
 
         {/* Right Side Image */}
@@ -129,13 +84,14 @@ export default function HeroSection() {
         >
           {/* Person Image */}
           <Image
-            src="/boy.png"
-            alt="Hero visual"
-            width={920}
-            height={1120}
-            priority={false}
-            className="relative z-10 scale-110 -translate-y-30"
-          />
+  src="/boy.png"
+  alt="Hero visual"
+  width={920}
+  height={1120}
+  priority={false}
+  className="relative z-10 scale-105 mt-12" // ✅ Removed -translate-y-30, added margin-top
+/>
+
         </motion.div>
       </div>
     </section>

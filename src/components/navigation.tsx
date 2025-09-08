@@ -4,8 +4,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ArrowRight, Menu, X } from "lucide-react";
+import Link from "next/link";   // ✅ Import Next.js Link
 
-// Services data (accordion style)
+// Services data
 const services = [
   {
     title: "Software Development",
@@ -71,7 +72,7 @@ const services = [
   },
 ];
 
-// Navigation items (About moved to last)
+// Navigation items
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services", dropdown: true },
@@ -88,10 +89,10 @@ export default function Navigation() {
   return (
     <nav className="w-full fixed top-0 left-0 z-50 bg-white shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <a href="/" className="text-2xl font-bold text-primary">
+        {/* ✅ Logo with Link */}
+        <Link href="/" className="text-2xl font-bold text-primary">
           FutureTech
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
@@ -169,14 +170,15 @@ export default function Navigation() {
                 </AnimatePresence>
               </div>
             ) : (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                whileHover={{ y: -2 }}
-                className="relative text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </motion.a>
+              <motion.div key={item.name} whileHover={{ y: -2 }}>
+                {/* ✅ Use Link instead of <a> */}
+                <Link
+                  href={item.href}
+                  className="relative text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </Link>
+              </motion.div>
             )
           )}
 
@@ -247,13 +249,14 @@ export default function Navigation() {
                     </AnimatePresence>
                   </div>
                 ) : (
-                  <a
+                  // ✅ Mobile links with Link
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="text-gray-700 font-medium hover:text-primary"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )
               )}
 
