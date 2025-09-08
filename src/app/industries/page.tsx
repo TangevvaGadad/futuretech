@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion"
 import { GraduationCap, Radio, Zap, Heart, Monitor, Cpu, ArrowRight } from "lucide-react"
+import type { Variants } from "framer-motion"
+import Navigation from "@/components/navigation"
 
 const industries = [
   {
@@ -60,7 +62,8 @@ const industries = [
   },
 ]
 
-const containerVariants = {
+
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -68,7 +71,7 @@ const containerVariants = {
   },
 }
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 60 },
   visible: {
     opacity: 1,
@@ -77,10 +80,12 @@ const itemVariants = {
   },
 }
 
+
 export default function IndustriesPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
       {/* Hero Section */}
+      <Navigation />
       <section className="pt-32 pb-20 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
