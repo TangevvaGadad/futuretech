@@ -90,7 +90,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="/" className="text-2xl font-bold text-primary">
-          CareerCoach
+          FutureTech
         </a>
 
         {/* Desktop Navigation */}
