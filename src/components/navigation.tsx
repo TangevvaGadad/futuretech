@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ChevronDown, ArrowRight, Menu, X } from "lucide-react";
-import Link from "next/link";   // ✅ Import Next.js Link
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { ChevronDown, ArrowRight, Menu, X, Sparkles } from "lucide-react"
+import Link from "next/link"
 
 // Services data
 const services = [
@@ -15,62 +15,44 @@ const services = [
       "Enterprise solutions (ERP, CRM, HRMS)",
       "SaaS & cloud-native applications",
     ],
+    icon: "💻",
   },
   {
     title: "Cloud & IT Infrastructure",
-    details: [
-      "Cloud migration & DevOps",
-      "Cybersecurity & backup solutions",
-      "Managed IT services",
-    ],
+    details: ["Cloud migration & DevOps", "Cybersecurity & backup solutions", "Managed IT services"],
+    icon: "☁️",
   },
   {
     title: "AI, Data & Emerging Tech",
-    details: [
-      "AI/ML, NLP (chatbots, voice AI)",
-      "Computer Vision & Data Analytics",
-      "Blockchain, IoT & Big Data",
-    ],
+    details: ["AI/ML, NLP (chatbots, voice AI)", "Computer Vision & Data Analytics", "Blockchain, IoT & Big Data"],
+    icon: "🤖",
   },
   {
     title: "Digital Transformation",
-    details: [
-      "IT consulting & strategy",
-      "Process automation (RPA)",
-      "Enterprise architecture",
-    ],
+    details: ["IT consulting & strategy", "Process automation (RPA)", "Enterprise architecture"],
+    icon: "🚀",
   },
   {
     title: "Product Innovation",
-    details: [
-      "MVP & prototyping",
-      "API development & integration",
-      "AR/VR & Metaverse solutions",
-    ],
+    details: ["MVP & prototyping", "API development & integration", "AR/VR & Metaverse solutions"],
+    icon: "💡",
   },
   {
     title: "Industry-specific Solutions",
-    details: [
-      "FinTech, Healthcare, E-commerce, Education",
-      "Government & Smart Cities",
-    ],
+    details: ["FinTech, Healthcare, E-commerce, Education", "Government & Smart Cities"],
+    icon: "🏢",
   },
   {
     title: "Enterprise IT Support",
-    details: [
-      "Helpdesk & remote support",
-      "Maintenance & upgrades",
-      "QA & testing",
-    ],
+    details: ["Helpdesk & remote support", "Maintenance & upgrades", "QA & testing"],
+    icon: "🛠️",
   },
   {
     title: "UI/UX & Branding",
-    details: [
-      "UI/UX design for web & mobile",
-      "Branding & digital identity",
-    ],
+    details: ["UI/UX design for web & mobile", "Branding & digital identity"],
+    icon: "🎨",
   },
-];
+]
 
 // Navigation items
 const navItems = [
@@ -79,192 +61,253 @@ const navItems = [
   { name: "Industries", href: "/industries" },
   { name: "Contact", href: "/contact" },
   { name: "About", href: "/about" },
-];
+]
 
 export default function Navigation() {
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [activeService, setActiveService] = useState<number | null>(null);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [activeService, setActiveService] = useState<number | null>(null)
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* ✅ Logo with Link */}
-        <Link href="/" className="text-2xl font-bold text-primary">
-          FutureTech
-        </Link>
+    <>
+      <div className="fixed top-0 left-0 w-full h-20 bg-gradient-to-r from-violet-600/10 via-blue-600/10 to-cyan-600/10 backdrop-blur-md z-40" />
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) =>
-            item.dropdown ? (
-              // Services Dropdown
-              <div
-                key={item.name}
-                className="relative"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => {
-                  setServicesOpen(false);
-                  setActiveService(null);
-                }}
-              >
-                <button className="flex items-center text-gray-700 font-medium hover:text-primary transition-colors duration-200">
-                  {item.name} <ChevronDown className="ml-1 w-4 h-4" />
-                </button>
+      <nav className="w-full fixed top-0 left-0 z-50 bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-lg shadow-violet-500/10">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+          <Link href="/" className="group flex items-center space-x-2">
+            <motion.div
+              whileHover={{ rotate: 360, scale: 1.1 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="w-8 h-8 bg-gradient-to-br from-violet-600 to-cyan-600 rounded-lg flex items-center justify-center"
+            >
+              <Sparkles className="w-5 h-5 text-white" />
+            </motion.div>
+            <span className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              FutureTech
+            </span>
+          </Link>
 
-                <AnimatePresence>
-                  {servicesOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute left-0 mt-4 w-[400px] bg-white shadow-2xl rounded-2xl border border-gray-200 p-6 z-50"
-                    >
-                      <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-                      <ul className="space-y-4">
-                        {services.map((service, index) => (
-                          <li key={index}>
-                            <button
-                              onClick={() =>
-                                setActiveService(
-                                  activeService === index ? null : index
-                                )
-                              }
-                              className="w-full flex items-center justify-between text-gray-700 font-medium hover:text-primary transition-colors"
-                            >
-                              {service.title}
-                              <ChevronDown
-                                className={`ml-2 w-4 h-4 transition-transform ${
-                                  activeService === index ? "rotate-180" : ""
-                                }`}
-                              />
-                            </button>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) =>
+              item.dropdown ? (
+                <div
+                  key={item.name}
+                  className="relative"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => {
+                    setServicesOpen(false)
+                    setActiveService(null)
+                  }}
+                >
+                  <motion.button
+                    whileHover={{ y: -2 }}
+                    className="flex items-center text-gray-700 font-medium hover:text-transparent hover:bg-gradient-to-r hover:from-violet-600 hover:to-cyan-600 hover:bg-clip-text transition-all duration-300"
+                  >
+                    {item.name}
+                    <motion.div animate={{ rotate: servicesOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                      <ChevronDown className="ml-1 w-4 h-4" />
+                    </motion.div>
+                  </motion.button>
 
-                            <AnimatePresence>
-                              {activeService === index && (
-                                <motion.ul
-                                  initial={{ opacity: 0, height: 0 }}
-                                  animate={{ opacity: 1, height: "auto" }}
-                                  exit={{ opacity: 0, height: 0 }}
-                                  transition={{ duration: 0.3 }}
-                                  className="mt-2 pl-4 space-y-2 text-sm text-gray-600"
+                  <AnimatePresence>
+                    {servicesOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="absolute left-0 mt-4 w-[450px] bg-white/95 backdrop-blur-xl shadow-2xl rounded-3xl border border-white/30 p-8 z-50 overflow-hidden"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-br from-violet-50/50 via-blue-50/30 to-cyan-50/50 rounded-3xl" />
+
+                        <div className="relative z-10">
+                          <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-violet-600 to-cyan-600 bg-clip-text text-transparent">
+                            Our Services
+                          </h3>
+                          <div className="grid grid-cols-1 gap-3">
+                            {services.map((service, index) => (
+                              <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                                className="group"
+                              >
+                                <button
+                                  onClick={() => setActiveService(activeService === index ? null : index)}
+                                  className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-gradient-to-r hover:from-violet-100/50 hover:to-cyan-100/50 transition-all duration-300 group-hover:shadow-md"
                                 >
-                                  {service.details.map((detail, i) => (
-                                    <li
-                                      key={i}
-                                      className="flex items-center gap-2"
+                                  <div className="flex items-center space-x-3">
+                                    <span className="text-lg">{service.icon}</span>
+                                    <span className="text-gray-700 font-medium group-hover:text-gray-900">
+                                      {service.title}
+                                    </span>
+                                  </div>
+                                  <motion.div
+                                    animate={{ rotate: activeService === index ? 180 : 0 }}
+                                    transition={{ duration: 0.3 }}
+                                  >
+                                    <ChevronDown className="w-4 h-4 text-gray-500 group-hover:text-violet-600" />
+                                  </motion.div>
+                                </button>
+
+                                <AnimatePresence>
+                                  {activeService === index && (
+                                    <motion.ul
+                                      initial={{ opacity: 0, height: 0 }}
+                                      animate={{ opacity: 1, height: "auto" }}
+                                      exit={{ opacity: 0, height: 0 }}
+                                      transition={{ duration: 0.3 }}
+                                      className="mt-2 pl-6 space-y-2 text-sm text-gray-600 bg-gradient-to-r from-violet-50/30 to-cyan-50/30 rounded-lg p-3"
                                     >
-                                      <ArrowRight className="w-4 h-4 text-gray-500" />
+                                      {service.details.map((detail, i) => (
+                                        <motion.li
+                                          key={i}
+                                          initial={{ opacity: 0, x: -10 }}
+                                          animate={{ opacity: 1, x: 0 }}
+                                          transition={{ delay: i * 0.1 }}
+                                          className="flex items-center gap-2 hover:text-gray-800 transition-colors"
+                                        >
+                                          <ArrowRight className="w-3 h-3 text-violet-500" />
+                                          {detail}
+                                        </motion.li>
+                                      ))}
+                                    </motion.ul>
+                                  )}
+                                </AnimatePresence>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <motion.div key={item.name} whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                  <Link
+                    href={item.href}
+                    className="relative text-gray-700 hover:text-transparent hover:bg-gradient-to-r hover:from-violet-600 hover:to-cyan-600 hover:bg-clip-text transition-all duration-300 font-medium group"
+                  >
+                    {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-600 to-cyan-600 group-hover:w-full transition-all duration-300" />
+                  </Link>
+                </motion.div>
+              ),
+            )}
+
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button className="bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-600 hover:from-violet-700 hover:via-blue-700 hover:to-cyan-700 text-white font-semibold px-6 py-2 rounded-full shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300">
+                Get Started
+              </Button>
+            </motion.div>
+          </div>
+
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden p-2 rounded-lg bg-gradient-to-r from-violet-100 to-cyan-100 text-gray-700 hover:from-violet-200 hover:to-cyan-200 transition-all duration-300"
+          >
+            <motion.div animate={{ rotate: mobileOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.div>
+          </motion.button>
+        </div>
+
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="md:hidden bg-white/95 backdrop-blur-xl shadow-lg overflow-hidden border-t border-white/20"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-50/30 via-blue-50/20 to-cyan-50/30" />
+
+              <div className="relative z-10 flex flex-col space-y-4 p-6">
+                {navItems.map((item, index) =>
+                  item.dropdown ? (
+                    <motion.div
+                      key={item.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <button
+                        onClick={() => setServicesOpen(!servicesOpen)}
+                        className="flex items-center justify-between w-full text-gray-700 font-medium p-3 rounded-lg hover:bg-gradient-to-r hover:from-violet-100/50 hover:to-cyan-100/50 transition-all duration-300"
+                      >
+                        {item.name}
+                        <motion.div animate={{ rotate: servicesOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
+                          <ChevronDown className="w-4 h-4" />
+                        </motion.div>
+                      </button>
+
+                      <AnimatePresence>
+                        {servicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                            className="mt-2 pl-4 space-y-3 bg-gradient-to-r from-violet-50/50 to-cyan-50/50 rounded-lg p-4"
+                          >
+                            {services.map((service, i) => (
+                              <motion.div
+                                key={i}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.05 }}
+                                className="space-y-2"
+                              >
+                                <div className="flex items-center space-x-2">
+                                  <span className="text-sm">{service.icon}</span>
+                                  <p className="font-medium text-gray-800">{service.title}</p>
+                                </div>
+                                <ul className="pl-6 space-y-1 text-sm text-gray-600">
+                                  {service.details.map((detail, j) => (
+                                    <li key={j} className="flex items-center gap-2">
+                                      <ArrowRight className="w-3 h-3 text-violet-500" />
                                       {detail}
                                     </li>
                                   ))}
-                                </motion.ul>
-                              )}
-                            </AnimatePresence>
-                          </li>
-                        ))}
-                      </ul>
+                                </ul>
+                              </motion.div>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ) : (
-              <motion.div key={item.name} whileHover={{ y: -2 }}>
-                {/* ✅ Use Link instead of <a> */}
-                <Link
-                  href={item.href}
-                  className="relative text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
-                >
-                  {item.name}
-                </Link>
-              </motion.div>
-            )
-          )}
-
-          <Button className="gradient-primary hover:opacity-90 transition-opacity">
-            Get Started
-          </Button>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-gray-700"
-        >
-          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            exit={{ height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white shadow-lg overflow-hidden"
-          >
-            <div className="flex flex-col space-y-4 p-6">
-              {navItems.map((item) =>
-                item.dropdown ? (
-                  <div key={item.name}>
-                    <button
-                      onClick={() => setServicesOpen(!servicesOpen)}
-                      className="flex items-center justify-between w-full text-gray-700 font-medium"
+                  ) : (
+                    <motion.div
+                      key={item.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
                     >
-                      {item.name}
-                      <ChevronDown
-                        className={`ml-2 w-4 h-4 transition-transform ${
-                          servicesOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
+                      <Link
+                        href={item.href}
+                        className="block text-gray-700 font-medium p-3 rounded-lg hover:bg-gradient-to-r hover:from-violet-100/50 hover:to-cyan-100/50 hover:text-gray-900 transition-all duration-300"
+                      >
+                        {item.name}
+                      </Link>
+                    </motion.div>
+                  ),
+                )}
 
-                    <AnimatePresence>
-                      {servicesOpen && (
-                        <motion.ul
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.2 }}
-                          className="mt-2 pl-4 space-y-2 text-gray-600"
-                        >
-                          {services.map((service, i) => (
-                            <li key={i}>
-                              <p className="font-medium">{service.title}</p>
-                              <ul className="pl-4 mt-1 space-y-1 text-sm">
-                                {service.details.map((detail, j) => (
-                                  <li key={j} className="flex items-center gap-2">
-                                    <ArrowRight className="w-4 h-4 text-gray-500" />
-                                    {detail}
-                                  </li>
-                                ))}
-                              </ul>
-                            </li>
-                          ))}
-                        </motion.ul>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ) : (
-                  // ✅ Mobile links with Link
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="text-gray-700 font-medium hover:text-primary"
-                  >
-                    {item.name}
-                  </Link>
-                )
-              )}
-
-              <Button className="gradient-primary w-full">Get Started</Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
-  );
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+                  <Button className="w-full bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-600 hover:from-violet-700 hover:via-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-full shadow-lg shadow-violet-500/25">
+                    Get Started
+                  </Button>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </>
+  )
 }

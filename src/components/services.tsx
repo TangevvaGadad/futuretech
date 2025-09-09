@@ -1,155 +1,98 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
+import Image from "next/image"
 import Lottie from "lottie-react"
 
-// Import your Lottie JSONs
-import softwareAnim from "../lotties/software.json"
-import cloudAnim from "../lotties/cloud.json"
-import aiAnim from "../lotties/ai.json"
-import digitalAnim from "../lotties/digital.json"
-import productAnim from "../lotties/product.json"
-import industryAnim from "../lotties/industry.json"
-import supportAnim from "../lotties/support.json"
-import designAnim from "../lotties/design.json"
+// Lottie JSON animations
+import softwareDevAnim from "../lotties/software.json"
+import cloudDevOpsAnim from "../lotties/cloud.json"
+import aiMLAnim from "../lotties/ai.json"
+import digitalTransAnim from "../lotties/digital.json"
+import productInnovAnim from "../lotties/product.json"
+import industrySolutionsAnim from "../lotties/industry.json"
+import itSupportAnim from "../lotties/it.json"
+import designBrandingAnim from "../lotties/design.json"
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] } },
+}
 
 const Services = () => {
   const services = [
-    {
-      anim: softwareAnim,
-      title: "Software Development",
-      description:
-        "Custom web & mobile applications (iOS/Android), enterprise solutions (ERP, CRM, HRMS), and SaaS platforms built with cutting-edge technologies.",
-      features: ["Web & Mobile Apps", "Enterprise Solutions", "SaaS & Cloud Apps"],
-      bg: "bg-gradient-to-br from-pink-200 to-pink-300",
-    },
-    {
-      anim: cloudAnim,
-      title: "Cloud & IT Infrastructure",
-      description:
-        "Scalable cloud solutions, DevOps practices, cybersecurity, backup solutions, and comprehensive IT infrastructure management.",
-      features: ["Cloud Migration", "DevOps & Security", "Managed IT Services"],
-      bg: "bg-gradient-to-br from-indigo-200 to-indigo-300",
-    },
-    {
-      anim: aiAnim,
-      title: "AI, Data & Emerging Tech",
-      description:
-        "Leverage artificial intelligence, machine learning, NLP (chatbots, voice AI), computer vision, and data analytics to drive innovation.",
-      features: ["AI/ML & NLP", "Computer Vision", "Blockchain & IoT"],
-      bg: "bg-gradient-to-br from-yellow-200 to-yellow-300",
-    },
-    {
-      anim: digitalAnim,
-      title: "Digital Transformation",
-      description:
-        "Transform your business processes with strategic IT consulting, process automation (RPA), and enterprise architecture solutions.",
-      features: ["IT Consulting", "Process Automation", "Enterprise Architecture"],
-      bg: "bg-gradient-to-br from-green-200 to-green-300",
-    },
-    {
-      anim: productAnim,
-      title: "Product Innovation",
-      description:
-        "From concept to market, we help you build innovative products including MVP & prototyping, API development, and AR/VR & Metaverse solutions.",
-      features: ["MVP & Prototyping", "API Development", "AR/VR Solutions"],
-      bg: "bg-gradient-to-br from-purple-200 to-purple-300",
-    },
-    {
-      anim: industryAnim,
-      title: "Industry-specific Solutions",
-      description:
-        "Tailored solutions for FinTech, Healthcare, E-commerce, Education, Government, and Smart Cities with industry expertise.",
-      features: ["FinTech Solutions", "Healthcare Tech", "Smart Cities"],
-      bg: "bg-gradient-to-br from-orange-200 to-orange-300",
-    },
-    {
-      anim: supportAnim,
-      title: "Enterprise IT Support",
-      description:
-        "Comprehensive IT support services including 24/7 helpdesk, remote support, maintenance, upgrades, and QA & testing.",
-      features: ["24/7 Helpdesk", "Remote Support", "QA & Testing"],
-      bg: "bg-gradient-to-br from-teal-200 to-teal-300",
-    },
-    {
-      anim: designAnim,
-      title: "UI/UX & Branding",
-      description:
-        "Beautiful, intuitive designs for web & mobile applications, comprehensive branding, and digital identity solutions.",
-      features: ["UI/UX Design", "Brand Identity", "Digital Marketing"],
-      bg: "bg-gradient-to-br from-rose-200 to-rose-300",
-    },
+    { animation: softwareDevAnim, title: "Software Development", brief: "Custom web & mobile applications, enterprise solutions" },
+    { animation: cloudDevOpsAnim, title: "Cloud & DevOps", brief: "Scalable infrastructure, security & deployment automation" },
+    { animation: aiMLAnim, title: "AI & Machine Learning", brief: "Intelligent automation, data analytics & predictive models" },
+    { animation: digitalTransAnim, title: "Digital Transformation", brief: "Process automation, IT consulting & modernization" },
+    { animation: productInnovAnim, title: "Product Innovation", brief: "MVP development, API integration & rapid prototyping" },
+    { animation: industrySolutionsAnim, title: "Industry Solutions", brief: "FinTech, Healthcare, E-commerce & Smart Cities" },
+    { animation: itSupportAnim, title: "IT Support", brief: "24/7 helpdesk, maintenance & technical assistance" },
+    { animation: designBrandingAnim, title: "Design & Branding", brief: "UI/UX design, brand identity & digital marketing" },
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" as const },
-    },
-  }
-
   return (
-    <section id="services" className="py-20 bg-soft">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
+    <section className="py-16 bg-soft relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-10">
+        {/* Left: Services List */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
-          className="text-center mb-16"
+          className="flex-1"
         >
           <motion.h2 variants={itemVariants} className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            World-Class <span className="text-gradient">Technology Services</span>
+            Our <span className="text-gradient">Services</span>
           </motion.h2>
-          <motion.p variants={itemVariants} className="text-lg text-gray-600 max-w-3xl mx-auto">
-            From software development to emerging technologies, we provide comprehensive solutions that empower
-            communities and drive sustainable growth worldwide.
-          </motion.p>
+
+          
+
+          <div className="space-y-4">
+            {services.map((service, idx) => (
+              <motion.div
+                key={idx}
+                variants={itemVariants}
+                whileHover={{ x: 10 }}
+                className="flex items-start space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
+              >
+                <div className="flex-shrink-0 w-14 h-14">
+                  <Lottie animationData={service.animation} loop={true} />
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-tight">{service.brief}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Right: Transparent PNG Illustration Image */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="flex-1"
         >
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className={`${service.bg} p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center`}
-            >
-              {/* Centered Lottie */}
-              <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-white/30 rounded-full p-3">
-                <Lottie animationData={service.anim} loop={true} />
-              </div>
-
-              <h3 className="text-2xl font-bold mb-3 text-gray-800">{service.title}</h3>
-              <p className="text-sm mb-4 text-gray-700">{service.description}</p>
-              <ul className="space-y-2 text-left inline-block">
-                {service.features.map((feature, fIdx) => (
-                  <li key={fIdx} className="flex items-center text-sm text-gray-600">
-                    <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-2"></span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+          <div className="rounded-lg shadow-lg overflow-hidden w-full h-full">
+            <Image
+              src="/services.png"
+              alt="Services Illustration"
+              width={1000}
+              height={1000}
+              style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
+              unoptimized
+            />
+          </div>
         </motion.div>
       </div>
     </section>
