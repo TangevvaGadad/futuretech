@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight, Zap, Target, Users, Lightbulb, Shield, Rocket } from "lucide-react"
-import Navigation from "@/components/navigation"
 
 const services = [
   {
@@ -75,7 +74,6 @@ const itemVariants = {
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
-      <Navigation/>
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
