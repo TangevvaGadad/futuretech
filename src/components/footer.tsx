@@ -51,7 +51,7 @@ const Footer = () => {
       {/* Main Footer Content */}
       <div className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {/* Company Info */}
             <div className="lg:col-span-2">
               <motion.div
@@ -94,16 +94,17 @@ const Footer = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                className="flex flex-col"
               >
-                <h4 className="text-lg font-semibold mb-4 capitalize">
+                <h4 className="text-lg font-semibold mb-4 capitalize text-white">
                   {category}
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-3 flex-1">
                   {links.map((link) => (
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-gray-400 hover-link"
+                        className="text-gray-400 hover:text-white transition-colors duration-200 hover:underline"
                       >
                         {link.name}
                       </a>
