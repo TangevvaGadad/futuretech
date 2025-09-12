@@ -16,7 +16,7 @@ const industries = [
     bgGradient: "from-purple-50 to-pink-50",
     stats: "500+ Educational Institutions",
     features: ["E-Learning Platforms", "Student Management Systems", "Virtual Classrooms", "Educational Analytics"],
-    image: "/services.png",
+    image: "/edu.png",
     color: "purple",
   },
   {
@@ -28,7 +28,7 @@ const industries = [
     bgGradient: "from-pink-50 to-red-50",
     stats: "200+ Media Companies",
     features: ["5G Infrastructure", "Streaming Solutions", "Content Management", "Network Optimization"],
-    image: "/business-meeting-thumbnail.png",
+    image: "/techandmed.png",
     color: "pink",
   },
   {
@@ -40,7 +40,7 @@ const industries = [
     bgGradient: "from-purple-100 to-pink-100",
     stats: "150+ Energy Projects",
     features: ["Smart Grid Systems", "Renewable Energy", "Energy Analytics", "Carbon Footprint Tracking"],
-    image: "/lap.png",
+    image: "/energyandsustain.png",
     color: "purple",
   },
   {
@@ -52,7 +52,7 @@ const industries = [
     bgGradient: "from-pink-100 to-red-100",
     stats: "300+ Healthcare Providers",
     features: ["Telemedicine Platforms", "Electronic Health Records", "Medical IoT", "Health Analytics"],
-    image: "/girlwithlaptop.png",
+    image: "/health.png",
     color: "pink",
   },
   {
@@ -64,7 +64,7 @@ const industries = [
     bgGradient: "from-purple-200 to-pink-200",
     stats: "1000+ IT Projects",
     features: ["Cloud Migration", "DevOps Solutions", "Cybersecurity", "Digital Transformation"],
-    image: "/boy.png",
+    image: "/info.png",
     color: "purple",
   },
   {
@@ -76,7 +76,7 @@ const industries = [
     bgGradient: "from-pink-200 to-red-200",
     stats: "100+ Innovation Projects",
     features: ["Artificial Intelligence", "Blockchain Solutions", "IoT Ecosystems", "Quantum Computing"],
-    image: "/boy1.png",
+    image: "/emer.png",
     color: "pink",
   },
 ]
