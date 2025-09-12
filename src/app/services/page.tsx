@@ -9,7 +9,7 @@ const services = [
     title: "Client Acquisition Services",
     description:
       "We offer result-driven Client Acquisition Services to boost your online presence. From IT to social media, we help you grow your brand and reach the right audience.",
-    gradient: "from-pink-200 to-pink-300",
+    gradient: "from-purple-100 to-pink-100",
     features: ["SEO Optimization", "Social Media Marketing", "Lead Generation", "Brand Development"],
   },
   {
@@ -17,7 +17,7 @@ const services = [
     title: "IT Solutions",
     description:
       "We deliver innovative IT solutions tailored to meet your business needs. From software development to tech support, we ensure seamless digital transformation.",
-    gradient: "from-indigo-200 to-indigo-300",
+    gradient: "from-pink-100 to-red-100",
     features: ["Software Development", "Cloud Solutions", "Tech Support", "Digital Infrastructure"],
   },
   {
@@ -25,7 +25,7 @@ const services = [
     title: "Business Services",
     description:
       "We offer comprehensive business services to streamline your operations and drive growth. From strategy to execution, we support your success every step of the way.",
-    gradient: "from-yellow-200 to-yellow-300",
+    gradient: "from-purple-200 to-pink-200",
     features: ["Business Strategy", "Process Optimization", "Market Analysis", "Growth Planning"],
   },
   {
@@ -33,7 +33,7 @@ const services = [
     title: "Consulting Services",
     description:
       "We provide expert consulting services to help you make informed, strategic decisions. Our tailored solutions drive efficiency, growth, and long-term success.",
-    gradient: "from-green-200 to-green-300",
+    gradient: "from-pink-200 to-red-200",
     features: ["Strategic Planning", "Digital Transformation", "Performance Optimization", "Innovation Strategy"],
   },
   {
@@ -41,7 +41,7 @@ const services = [
     title: "Security Solutions",
     description:
       "Protect your business with our comprehensive security solutions. From cybersecurity to data protection, we ensure your digital assets are safe.",
-    gradient: "from-purple-200 to-purple-300",
+    gradient: "from-purple-300 to-pink-300",
     features: ["Cybersecurity", "Data Protection", "Risk Assessment", "Compliance Management"],
   },
   {
@@ -49,7 +49,7 @@ const services = [
     title: "Innovation Labs",
     description:
       "Explore cutting-edge technologies with our innovation labs. We help you stay ahead of the curve with emerging tech solutions.",
-    gradient: "from-teal-200 to-teal-300",
+    gradient: "from-pink-300 to-red-300",
     features: ["AI & Machine Learning", "Blockchain Solutions", "IoT Integration", "Emerging Technologies"],
   },
 ]
@@ -73,14 +73,24 @@ const itemVariants = {
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
+    <div className="min-h-screen bg-soft bubble-container">
+      {/* Beautiful Bubble Animations */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="bubble bubble-1"></div>
+        <div className="bubble bubble-2"></div>
+        <div className="bubble bubble-3"></div>
+        <div className="bubble bubble-4"></div>
+        <div className="bubble bubble-5"></div>
+        <div className="bubble bubble-6"></div>
+      </div>
+      
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 lg:px-8">
+      <section className="pt-32 pb-20 px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6">
               Our{" "}
-              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 bg-clip-text text-transparent">
+              <span className="text-gradient">
                 Services
               </span>
             </h1>
@@ -135,7 +145,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-pink-600">
+      <section className="py-20 px-6 lg:px-8 gradient-primary">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}

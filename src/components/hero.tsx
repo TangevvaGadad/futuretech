@@ -6,8 +6,22 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-r from-[#f3f0ff] to-[#e6f7ff]">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 py-16">
+    <section className="relative bg-soft overflow-hidden bubble-container">
+      {/* Beautiful Bubble Animations */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="bubble bubble-1"></div>
+        <div className="bubble bubble-2"></div>
+        <div className="bubble bubble-3"></div>
+        <div className="bubble bubble-4"></div>
+        <div className="bubble bubble-5"></div>
+        <div className="bubble bubble-6"></div>
+        {/* Additional floating elements */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full opacity-20 animate-pulse-slow"></div>
+        <div className="absolute top-1/2 -left-20 w-60 h-60 bg-gradient-to-br from-pink-200 to-red-200 rounded-full opacity-30 animate-float"></div>
+        <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full opacity-25 animate-pulse-slow"></div>
+      </div>
+      
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 py-16 relative z-10">
         
         {/* Left Content */}
         <div className="max-w-4xl lg:ml-8">
@@ -15,7 +29,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-4 inline-block rounded-full bg-purple-100 px-3 py-1 text-sm font-medium text-purple-700"
+            className="badge-theme"
           >
             FutureTech • Empowering Communities Through Technology
           </motion.div>
@@ -26,7 +40,8 @@ export default function HeroSection() {
             transition={{ duration: 1 }}
             className="text-4xl font-extrabold text-gray-900 leading-snug lg:text-5xl"
           >
-            We transform bold ideas into breakthrough technologies that solve real problems and create opportunities worldwide
+            We transform bold ideas into breakthrough{" "}
+            <span className="text-gradient">technologies</span> that solve real problems and create opportunities worldwide
           </motion.h1>
 
           <motion.p
@@ -52,7 +67,7 @@ export default function HeroSection() {
               "Healthcare",
               "Information Technology",
             ].map((chip) => (
-              <span key={chip} className="badge-theme bg-white/80 text-gray-700 border border-gray-200">
+              <span key={chip} className="badge-theme">
                 {chip}
               </span>
             ))}

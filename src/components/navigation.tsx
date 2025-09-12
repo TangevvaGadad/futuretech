@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, ArrowRight, Menu, X, Sparkles } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 // Services data
 const services = [
@@ -67,22 +68,23 @@ export default function Navigation() {
   const [servicesOpen, setServicesOpen] = useState(false)
   const [activeService, setActiveService] = useState<number | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-20 bg-gradient-to-r from-violet-600/10 via-blue-600/10 to-cyan-600/10 backdrop-blur-md z-40" />
+      <div className="fixed top-0 left-0 w-full h-20 bg-gradient-to-r from-purple-100/95 via-pink-100/90 to-red-100/95 backdrop-blur-md z-40" />
 
-      <nav className="w-full fixed top-0 left-0 z-50 bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-lg shadow-violet-500/10">
+      <nav className="w-full fixed top-0 left-0 z-50 bg-gradient-to-r from-purple-50/95 via-pink-50/90 to-red-50/95 backdrop-blur-xl border-b border-purple-300/40 shadow-lg shadow-purple-500/20">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           <Link href="/" className="group flex items-center space-x-2">
             <motion.div
               whileHover={{ rotate: 360, scale: 1.1 }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="w-8 h-8 bg-gradient-to-br from-violet-600 to-cyan-600 rounded-lg flex items-center justify-center"
+              className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center shadow-lg"
             >
-              <Sparkles className="w-5 h-5 text-white" />
+              <Sparkles className="w-6 h-6 text-white" />
             </motion.div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold text-gradient">
               FutureTech
             </span>
           </Link>
@@ -102,7 +104,7 @@ export default function Navigation() {
                 >
                   <motion.button
                     whileHover={{ y: -2 }}
-                    className="flex items-center text-gray-700 font-medium hover:text-transparent hover:bg-gradient-to-r hover:from-violet-600 hover:to-cyan-600 hover:bg-clip-text transition-all duration-300"
+                    className="flex items-center text-gray-700 font-medium hover:text-transparent hover:text-gradient transition-all duration-300"
                   >
                     {item.name}
                     <motion.div animate={{ rotate: servicesOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
@@ -117,12 +119,12 @@ export default function Navigation() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="absolute left-0 mt-4 w-[450px] bg-white/95 backdrop-blur-xl shadow-2xl rounded-3xl border border-white/30 p-8 z-50 overflow-hidden"
+                        className="absolute left-0 mt-4 w-[450px] bg-white/95 backdrop-blur-xl shadow-2xl rounded-3xl border border-purple-200/30 p-8 z-50 overflow-hidden"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-br from-violet-50/50 via-blue-50/30 to-cyan-50/50 rounded-3xl" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-pink-50/30 to-red-50/50 rounded-3xl" />
 
                         <div className="relative z-10">
-                          <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-violet-600 to-cyan-600 bg-clip-text text-transparent">
+                          <h3 className="text-xl font-bold mb-6 text-gradient">
                             Our Services
                           </h3>
                           <div className="grid grid-cols-1 gap-3">
@@ -136,7 +138,7 @@ export default function Navigation() {
                               >
                                 <button
                                   onClick={() => setActiveService(activeService === index ? null : index)}
-                                  className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-gradient-to-r hover:from-violet-100/50 hover:to-cyan-100/50 transition-all duration-300 group-hover:shadow-md"
+                                  className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-gradient-to-r hover:from-purple-100/50 hover:to-pink-100/50 transition-all duration-300 group-hover:shadow-md"
                                 >
                                   <div className="flex items-center space-x-3">
                                     <span className="text-lg">{service.icon}</span>
@@ -148,7 +150,7 @@ export default function Navigation() {
                                     animate={{ rotate: activeService === index ? 180 : 0 }}
                                     transition={{ duration: 0.3 }}
                                   >
-                                    <ChevronDown className="w-4 h-4 text-gray-500 group-hover:text-violet-600" />
+                                    <ChevronDown className="w-4 h-4 text-gray-500 group-hover:text-purple-600" />
                                   </motion.div>
                                 </button>
 
@@ -159,7 +161,7 @@ export default function Navigation() {
                                       animate={{ opacity: 1, height: "auto" }}
                                       exit={{ opacity: 0, height: 0 }}
                                       transition={{ duration: 0.3 }}
-                                      className="mt-2 pl-6 space-y-2 text-sm text-gray-600 bg-gradient-to-r from-violet-50/30 to-cyan-50/30 rounded-lg p-3"
+                                      className="mt-2 pl-6 space-y-2 text-sm text-gray-600 bg-gradient-to-r from-purple-50/30 to-pink-50/30 rounded-lg p-3"
                                     >
                                       {service.details.map((detail, i) => (
                                         <motion.li
@@ -169,7 +171,7 @@ export default function Navigation() {
                                           transition={{ delay: i * 0.1 }}
                                           className="flex items-center gap-2 hover:text-gray-800 transition-colors"
                                         >
-                                          <ArrowRight className="w-3 h-3 text-violet-500" />
+                                          <ArrowRight className="w-3 h-3 text-purple-500" />
                                           {detail}
                                         </motion.li>
                                       ))}
@@ -188,17 +190,23 @@ export default function Navigation() {
                 <motion.div key={item.name} whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                   <Link
                     href={item.href}
-                    className="relative text-gray-700 hover:text-transparent hover:bg-gradient-to-r hover:from-violet-600 hover:to-cyan-600 hover:bg-clip-text transition-all duration-300 font-medium group"
+                    className={`relative transition-all duration-300 font-medium group ${
+                      pathname === item.href
+                        ? 'text-transparent text-gradient'
+                        : 'text-gray-700 hover:text-transparent hover:text-gradient'
+                    }`}
                   >
                     {item.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-600 to-cyan-600 group-hover:w-full transition-all duration-300" />
+                    <span className={`absolute -bottom-1 left-0 h-0.5 gradient-primary transition-all duration-300 ${
+                      pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`} />
                   </Link>
                 </motion.div>
               ),
             )}
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-600 hover:from-violet-700 hover:via-blue-700 hover:to-cyan-700 text-white font-semibold px-6 py-2 rounded-full shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300">
+              <Button className="btn-primary px-6 py-2 rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40">
                 Get Started
               </Button>
             </motion.div>
@@ -208,7 +216,7 @@ export default function Navigation() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 rounded-lg bg-gradient-to-r from-violet-100 to-cyan-100 text-gray-700 hover:from-violet-200 hover:to-cyan-200 transition-all duration-300"
+            className="md:hidden p-2 rounded-lg bg-gradient-to-r from-purple-100 to-pink-100 text-gray-700 hover:from-purple-200 hover:to-pink-200 transition-all duration-300"
           >
             <motion.div animate={{ rotate: mobileOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -223,9 +231,9 @@ export default function Navigation() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="md:hidden bg-white/95 backdrop-blur-xl shadow-lg overflow-hidden border-t border-white/20"
+              className="md:hidden bg-white/95 backdrop-blur-xl shadow-lg overflow-hidden border-t border-purple-200/30"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-50/30 via-blue-50/20 to-cyan-50/30" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-pink-50/20 to-red-50/30" />
 
               <div className="relative z-10 flex flex-col space-y-4 p-6">
                 {navItems.map((item, index) =>
@@ -238,7 +246,7 @@ export default function Navigation() {
                     >
                       <button
                         onClick={() => setServicesOpen(!servicesOpen)}
-                        className="flex items-center justify-between w-full text-gray-700 font-medium p-3 rounded-lg hover:bg-gradient-to-r hover:from-violet-100/50 hover:to-cyan-100/50 transition-all duration-300"
+                        className="flex items-center justify-between w-full text-gray-700 font-medium p-3 rounded-lg hover:bg-gradient-to-r hover:from-blue-100/50 hover:to-blue-200/50 transition-all duration-300"
                       >
                         {item.name}
                         <motion.div animate={{ rotate: servicesOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
@@ -253,7 +261,7 @@ export default function Navigation() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.3 }}
-                            className="mt-2 pl-4 space-y-3 bg-gradient-to-r from-violet-50/50 to-cyan-50/50 rounded-lg p-4"
+                            className="mt-2 pl-4 space-y-3 bg-gradient-to-r from-blue-50/50 to-blue-100/50 rounded-lg p-4"
                           >
                             {services.map((service, i) => (
                               <motion.div
@@ -270,7 +278,7 @@ export default function Navigation() {
                                 <ul className="pl-6 space-y-1 text-sm text-gray-600">
                                   {service.details.map((detail, j) => (
                                     <li key={j} className="flex items-center gap-2">
-                                      <ArrowRight className="w-3 h-3 text-violet-500" />
+                                      <ArrowRight className="w-3 h-3 text-blue-500" />
                                       {detail}
                                     </li>
                                   ))}
@@ -290,7 +298,11 @@ export default function Navigation() {
                     >
                       <Link
                         href={item.href}
-                        className="block text-gray-700 font-medium p-3 rounded-lg hover:bg-gradient-to-r hover:from-violet-100/50 hover:to-cyan-100/50 hover:text-gray-900 transition-all duration-300"
+                        className={`block font-medium p-3 rounded-lg transition-all duration-300 ${
+                          pathname === item.href
+                            ? 'text-transparent text-gradient bg-gradient-to-r from-purple-100/50 to-pink-100/50'
+                            : 'text-gray-700 hover:bg-gradient-to-r hover:from-purple-100/50 hover:to-pink-100/50 hover:text-gray-900'
+                        }`}
                       >
                         {item.name}
                       </Link>
@@ -299,7 +311,7 @@ export default function Navigation() {
                 )}
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                  <Button className="w-full bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-600 hover:from-violet-700 hover:via-blue-700 hover:to-cyan-700 text-white font-semibold py-3 rounded-full shadow-lg shadow-violet-500/25">
+                  <Button className="w-full btn-primary py-3 rounded-full shadow-lg shadow-blue-500/25">
                     Get Started
                   </Button>
                 </motion.div>

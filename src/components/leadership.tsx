@@ -12,42 +12,42 @@ const Leadership = () => {
       title: "Co-founder and CEO",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      color: "from-blue-500 to-indigo-600",
+      color: "from-blue-500 to-blue-600",
     },
     {
       name: "Sanjay R Olekar",
       title: "Co-founder",
       image:
         "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-      color: "from-purple-500 to-pink-600",
+      color: "from-blue-600 to-blue-700",
     },
     {
       name: "Hanadi",
       title: "Chairman",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-      color: "from-green-500 to-emerald-600",
+      color: "from-blue-700 to-blue-800",
     },
     {
       name: "Misbah Uddin",
       title: "Managing Director",
       image:
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-      color: "from-orange-500 to-red-600",
+      color: "from-blue-800 to-blue-900",
     },
     {
       name: "Prasanna Kumar MR",
       title: "Chief Technology Officer ",
       image:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
-      color: "from-teal-500 to-cyan-600",
+      color: "from-blue-400 to-blue-500",
     },
     {
       name: "Samah",
       title: "Chief Operating Officer",
       image:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
-      color: "from-indigo-500 to-purple-600",
+      color: "from-blue-300 to-blue-400",
     },
   ];
 

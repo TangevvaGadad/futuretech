@@ -57,41 +57,65 @@ export default function WhyChooseUs() {
           <div className="space-y-6">
             <motion.div
               variants={itemVariants}
-              className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition"
+              whileHover={{ 
+                scale: 1.02,
+                y: -5,
+                transition: { duration: 0.3 }
+              }}
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-white/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
             >
-              <h3 className="font-semibold text-lg text-gray-900 mb-2">
-                Proven Result
-              </h3>
-              <p className="text-gray-600">
-                We have a track record of delivering tangible results for our clients. 
-                From increasing website traffic and improving search.
-              </p>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
+              <div className="relative z-10">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-300">
+                  Proven Result
+                </h3>
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
+                  We have a track record of delivering tangible results for our clients. 
+                  From increasing website traffic and improving search.
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
               variants={itemVariants}
-              className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition"
+              whileHover={{ 
+                scale: 1.02,
+                y: -5,
+                transition: { duration: 0.3 }
+              }}
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-white/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
             >
-              <h3 className="font-semibold text-lg text-gray-900 mb-2">
-                Customized Solutions
-              </h3>
-              <p className="text-gray-600">
-                We believe that one size does not fit all when it comes to digital marketing. 
-                That’s why we take the time to understand your IT.
-              </p>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
+              <div className="relative z-10">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-300">
+                  Customized Solutions
+                </h3>
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
+                  We believe that one size does not fit all when it comes to digital marketing. 
+                  That&apos;s why we take the time to understand your IT.
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
               variants={itemVariants}
-              className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition"
+              whileHover={{ 
+                scale: 1.02,
+                y: -5,
+                transition: { duration: 0.3 }
+              }}
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-white/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
             >
-              <h3 className="font-semibold text-lg text-gray-900 mb-2">
-                Dedicated Support
-              </h3>
-              <p className="text-gray-600">
-                Your success is our top priority. That’s why we provide dedicated support 
-                and guidance every step of the way.
-              </p>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
+              <div className="relative z-10">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-300">
+                  Dedicated Support
+                </h3>
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
+                  Your success is our top priority. That&apos;s why we provide dedicated support 
+                  and guidance every step of the way.
+                </p>
+              </div>
             </motion.div>
           </div>
         </motion.div>

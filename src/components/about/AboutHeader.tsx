@@ -9,17 +9,37 @@ export default function AboutHeader() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6 }}
-      className="text-center mb-12"
+      className="text-center"
     >
-      <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-        <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 bg-clip-text text-transparent">
+      <motion.h2 
+        className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6"
+        initial={{ scale: 0.9 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <span className="text-gradient">
           About Us
         </span>
-      </h2>
-      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+      </motion.h2>
+      <motion.p 
+        className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
         Learn more about our journey, vision, and commitment to building innovative,
         sustainable solutions for the future.
-      </p>
+      </motion.p>
+      
+      {/* Decorative Elements */}
+      <motion.div
+        className="flex justify-center mt-8"
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+      >
+        <div className="w-24 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-full"></div>
+      </motion.div>
     </motion.div>
   )
 }

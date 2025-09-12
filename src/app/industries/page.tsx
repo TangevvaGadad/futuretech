@@ -1,9 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { GraduationCap, Radio, Zap, Heart, Monitor, Cpu, ArrowRight } from "lucide-react"
+import { GraduationCap, Radio, Zap, Heart, Monitor, Cpu, ArrowRight, Star, Users, TrendingUp } from "lucide-react"
 import type { Variants } from "framer-motion"
 import Navigation from "@/components/navigation"
+import Image from "next/image"
 
 const industries = [
   {
@@ -11,54 +12,72 @@ const industries = [
     title: "Education & EdTech",
     description:
       "Revolutionizing learning through innovative educational technology solutions that make quality education accessible to all.",
-    gradient: "from-pink-200 to-pink-300",
+    gradient: "from-purple-100 to-pink-100",
+    bgGradient: "from-purple-50 to-pink-50",
     stats: "500+ Educational Institutions",
     features: ["E-Learning Platforms", "Student Management Systems", "Virtual Classrooms", "Educational Analytics"],
+    image: "/services.png",
+    color: "purple",
   },
   {
     icon: <Radio className="w-12 h-12" />,
     title: "Telecom & Media",
     description:
       "Enabling seamless communication and media experiences with cutting-edge telecommunications and broadcasting solutions.",
-    gradient: "from-indigo-200 to-indigo-300",
+    gradient: "from-pink-100 to-red-100",
+    bgGradient: "from-pink-50 to-red-50",
     stats: "200+ Media Companies",
     features: ["5G Infrastructure", "Streaming Solutions", "Content Management", "Network Optimization"],
+    image: "/business-meeting-thumbnail.png",
+    color: "pink",
   },
   {
     icon: <Zap className="w-12 h-12" />,
     title: "Energy & Sustainability",
     description:
       "Powering the future with sustainable energy solutions and smart grid technologies for a greener tomorrow.",
-    gradient: "from-yellow-200 to-yellow-300",
+    gradient: "from-purple-200 to-pink-200",
+    bgGradient: "from-purple-100 to-pink-100",
     stats: "150+ Energy Projects",
     features: ["Smart Grid Systems", "Renewable Energy", "Energy Analytics", "Carbon Footprint Tracking"],
+    image: "/lap.png",
+    color: "purple",
   },
   {
     icon: <Heart className="w-12 h-12" />,
     title: "Healthcare & Life Sciences",
     description:
       "Transforming healthcare delivery through digital health solutions, telemedicine, and medical technology innovations.",
-    gradient: "from-green-200 to-green-300",
+    gradient: "from-pink-200 to-red-200",
+    bgGradient: "from-pink-100 to-red-100",
     stats: "300+ Healthcare Providers",
     features: ["Telemedicine Platforms", "Electronic Health Records", "Medical IoT", "Health Analytics"],
+    image: "/girlwithlaptop.png",
+    color: "pink",
   },
   {
     icon: <Monitor className="w-12 h-12" />,
     title: "Information Technology",
     description:
       "Empowering businesses with comprehensive IT solutions, cloud infrastructure, and digital transformation services.",
-    gradient: "from-purple-200 to-purple-300",
+    gradient: "from-purple-300 to-pink-300",
+    bgGradient: "from-purple-200 to-pink-200",
     stats: "1000+ IT Projects",
     features: ["Cloud Migration", "DevOps Solutions", "Cybersecurity", "Digital Transformation"],
+    image: "/boy.png",
+    color: "purple",
   },
   {
     icon: <Cpu className="w-12 h-12" />,
     title: "Emerging Technologies",
     description:
       "Pioneering the future with AI, blockchain, IoT, and other emerging technologies that shape tomorrow's world.",
-    gradient: "from-teal-200 to-teal-300",
+    gradient: "from-pink-300 to-red-300",
+    bgGradient: "from-pink-200 to-red-200",
     stats: "100+ Innovation Projects",
     features: ["Artificial Intelligence", "Blockchain Solutions", "IoT Ecosystems", "Quantum Computing"],
+    image: "/boy1.png",
+    color: "pink",
   },
 ]
 
@@ -83,15 +102,29 @@ const itemVariants: Variants = {
 
 export default function IndustriesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
+    <div className="min-h-screen bg-soft bubble-container">
+      {/* Beautiful Bubble Animations */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="bubble bubble-1"></div>
+        <div className="bubble bubble-2"></div>
+        <div className="bubble bubble-3"></div>
+        <div className="bubble bubble-4"></div>
+        <div className="bubble bubble-5"></div>
+        <div className="bubble bubble-6"></div>
+      </div>
+
       {/* Hero Section */}
       <Navigation />
-      <section className="pt-32 pb-20 px-6 lg:px-8">
+      <section className="pt-32 pb-20 px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+          >
             <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6">
               Industries We{" "}
-              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 bg-clip-text text-transparent">
+              <span className="text-gradient">
                 Serve
               </span>
             </h1>
@@ -103,74 +136,124 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* Industries Grid */}
-      <section className="py-20 px-6 lg:px-8">
+      {/* Industries Showcase */}
+      <section className="py-20 px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="space-y-24"
           >
             {industries.map((industry, index) => (
               <motion.div
                 key={industry.title}
                 variants={itemVariants}
-                whileHover={{
-                  scale: 1.05,
-                  y: -15,
-                  transition: { duration: 0.3 },
-                }}
-                className={`relative p-8 rounded-3xl bg-gradient-to-br ${industry.gradient} shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer overflow-hidden`}
+                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-20`}
               >
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-4 right-4 w-32 h-32 rounded-full bg-white/20"></div>
-                  <div className="absolute bottom-4 left-4 w-20 h-20 rounded-full bg-white/10"></div>
-                </div>
-
-                <div className="relative z-10">
-                  <motion.div
-                    className="text-gray-700 mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    {industry.icon}
-                  </motion.div>
-
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">{industry.title}</h3>
-
-                  <p className="text-gray-700 mb-6 leading-relaxed">{industry.description}</p>
-
-                  <div className="mb-6">
-                    <span className="inline-block bg-white/50 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">
-                      {industry.stats}
-                    </span>
+                {/* Content Side */}
+                <motion.div 
+                  className="flex-1 space-y-8"
+                  whileHover={{ x: index % 2 === 0 ? 10 : -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="space-y-4">
+                    <motion.div
+                      className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${industry.gradient} shadow-lg`}
+                      whileHover={{ 
+                        scale: 1.1, 
+                        rotate: 360,
+                        transition: { duration: 0.6 }
+                      }}
+                    >
+                      <div className="text-white">
+                        {industry.icon}
+                      </div>
+                    </motion.div>
+                    
+                    <h3 className="text-4xl lg:text-5xl font-bold text-gray-900">
+                      {industry.title}
+                    </h3>
+                    
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      {industry.description}
+                    </p>
                   </div>
 
-                  <ul className="space-y-2 mb-6">
+                  <div className="flex flex-wrap gap-4">
+                    <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                      <Star className="w-5 h-5 text-yellow-500" />
+                      <span className="font-semibold text-gray-800">{industry.stats}</span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                      <Users className="w-5 h-5 text-blue-500" />
+                      <span className="font-semibold text-gray-800">Expert Team</span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                      <TrendingUp className="w-5 h-5 text-green-500" />
+                      <span className="font-semibold text-gray-800">Proven Results</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
                     {industry.features.map((feature, idx) => (
-                      <motion.li
+                      <motion.div
                         key={idx}
-                        className="flex items-center text-gray-700"
+                        className="flex items-center space-x-3 p-3 rounded-xl bg-white/60 backdrop-blur-sm hover:bg-white/80 transition-all duration-300"
+                        whileHover={{ scale: 1.05 }}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.1 }}
                       >
-                        <ArrowRight className="w-4 h-4 mr-2 text-gray-600" />
-                        {feature}
-                      </motion.li>
+                        <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${industry.gradient}`} />
+                        <span className="text-sm font-medium text-gray-700">{feature}</span>
+                      </motion.div>
                     ))}
-                  </ul>
+                  </div>
 
                   <motion.button
-                    whileHover={{ x: 5 }}
-                    className="flex items-center text-gray-800 font-semibold group-hover:text-gray-900 transition-colors"
+                    whileHover={{ scale: 1.05, x: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`inline-flex items-center space-x-2 px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r ${industry.gradient} shadow-lg hover:shadow-xl transition-all duration-300`}
                   >
-                    Explore Solutions <ArrowRight className="w-4 h-4 ml-2" />
+                    <span>Explore Solutions</span>
+                    <ArrowRight className="w-5 h-5" />
                   </motion.button>
-                </div>
+                </motion.div>
+
+                {/* Image Side */}
+                <motion.div 
+                  className="flex-1 relative"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative">
+                    <motion.div
+                      className={`absolute inset-0 bg-gradient-to-br ${industry.bgGradient} rounded-3xl blur-3xl opacity-30`}
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                        opacity: [0.3, 0.5, 0.3]
+                      }}
+                      transition={{ 
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                    <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
+                      <div className="aspect-square relative overflow-hidden rounded-2xl">
+                        <Image
+                          src={industry.image}
+                          alt={industry.title}
+                          fill
+                          className="object-cover"
+                        />
+                        <div className={`absolute inset-0 bg-gradient-to-t ${industry.gradient} opacity-20`} />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </motion.div>
             ))}
           </motion.div>
@@ -178,7 +261,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-6 lg:px-8 bg-gradient-to-r from-gray-900 to-gray-800">
+      <section className="py-20 px-6 lg:px-8 gradient-primary relative z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -187,17 +270,17 @@ export default function IndustriesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Impact Across Industries</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-purple-100 max-w-3xl mx-auto">
               Delivering measurable results and driving innovation across diverse sectors worldwide.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { number: "2000+", label: "Projects Completed" },
-              { number: "50+", label: "Industries Served" },
-              { number: "98%", label: "Client Satisfaction" },
-              { number: "24/7", label: "Support Available" },
+              { number: "2000+", label: "Projects Completed", icon: <Star className="w-8 h-8" /> },
+              { number: "50+", label: "Industries Served", icon: <Users className="w-8 h-8" /> },
+              { number: "98%", label: "Client Satisfaction", icon: <TrendingUp className="w-8 h-8" /> },
+              { number: "24/7", label: "Support Available", icon: <Zap className="w-8 h-8" /> },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -205,10 +288,16 @@ export default function IndustriesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center"
+                className="text-center group"
+                whileHover={{ scale: 1.05 }}
               >
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl mb-4 group-hover:bg-white/30 transition-all duration-300">
+                  <div className="text-white">
+                    {stat.icon}
+                  </div>
+                </div>
                 <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-gray-300">{stat.label}</div>
+                <div className="text-purple-100 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>

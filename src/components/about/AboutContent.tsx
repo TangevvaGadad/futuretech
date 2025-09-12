@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function AboutContent() {
   return (
-    <section className="py-20 px-6 lg:px-8 bg-white">
+    <section className="py-20 px-6 lg:px-8 bg-white/95 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-3 items-center gap-12">
         {/* Left Image */}
         <motion.div

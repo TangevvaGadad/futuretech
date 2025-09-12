@@ -27,7 +27,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden"
+      className="py-20 bg-soft relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
@@ -115,7 +115,7 @@ const Contact = () => {
               variants={itemVariants}
               className="flex justify-center pt-4"
             >
-              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 shadow-lg hover:shadow-2xl transition-all duration-500">
+              <Button className="btn-primary px-8 py-3 shadow-lg hover:shadow-2xl">
                 Send Message
               </Button>
             </motion.div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { 
   Mail, 
@@ -9,8 +8,7 @@ import {
   MapPin, 
   Linkedin, 
   Twitter, 
-  Github,
-  ArrowRight
+  Github
 } from "lucide-react";
 import TinyGif from "@/components/ui/tiny-gif";
 
@@ -50,38 +48,8 @@ const Footer = () => {
 
   return (
     <footer id="contact" className="bg-gray-900 text-white">
-      {/* Newsletter Section */}
-      <div className="py-16" style={{ background: "linear-gradient(90deg,#7c3aed22,#3b82f622)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h3 className="text-3xl font-bold mb-4">
-              Stay Updated with <span className="text-gradient">FutureTech</span>
-            </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Get the latest insights on technology trends, industry updates, and our latest innovations.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary text-gray-900"
-              />
-              <Button className="gradient-primary hover:opacity-90 transition-opacity rounded-full px-6">
-                Subscribe
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
       {/* Main Footer Content */}
-      <div className="py-16">
+      <div className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Company Info */}
