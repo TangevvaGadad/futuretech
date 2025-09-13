@@ -29,28 +29,28 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="badge-theme"
+            className="badge-theme text-sm font-medium mt-20 pt-4"
           >
-            FutureTech • Empowering Communities Through Technology
+            FutureTech • Transforming Ideas Into Reality
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-4xl font-extrabold text-gray-900 leading-snug lg:text-5xl"
+            className="text-3xl font-bold text-gray-900 leading-tight lg:text-4xl xl:text-5xl"
           >
-            We transform bold ideas into breakthrough{" "}
-            <span className="text-gradient">technologies</span> that solve real problems and create opportunities worldwide
+            We build <span className="text-gradient font-extrabold">innovative solutions</span> that{" "}
+            transform businesses
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="mt-4 text-lg text-gray-600"
+            className="mt-4 text-base text-gray-600 leading-relaxed max-w-2xl"
           >
-            From AI and Cloud to Digital Transformation and Emerging Technologies, we deliver world-class solutions that empower communities, create equal opportunities, and build sustainable futures.
+            From AI and cloud technologies to digital transformation, we deliver solutions that empower businesses and create lasting impact.
           </motion.p>
 
           {/* Industry chips */}
@@ -62,30 +62,30 @@ export default function HeroSection() {
           >
             {[
               "Education & EdTech",
-              "Telecom & Media",
+              "Telecom & Media", 
               "Energy & Sustainability",
               "Healthcare",
               "Information Technology",
             ].map((chip) => (
-              <span key={chip} className="badge-theme">
+              <span key={chip} className="badge-theme text-xs font-medium px-3 py-1.5">
                 {chip}
               </span>
             ))}
           </motion.div>
 
           {/* Buttons */}
-          <div className="mt-8 flex gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <a
               href="#services"
-              className="cta-primary"
+              className="cta-primary text-sm font-semibold"
             >
-              Explore Services <ArrowRight size={18} />
+              Explore Services <ArrowRight size={16} />
             </a>
             <a
               href="#contact"
-              className="cta-outline"
+              className="cta-outline text-sm font-semibold"
             >
-              Talk to an Expert <ArrowRight size={18} />
+              Get Started Today <ArrowRight size={16} />
             </a>
           </div>
         </div>
