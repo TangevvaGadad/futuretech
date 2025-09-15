@@ -2,9 +2,10 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, ArrowRight, Menu, X, Sparkles } from "lucide-react"
+import { ChevronDown, ArrowRight, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
 
 // Services data
 const services = [
@@ -71,21 +72,20 @@ export default function Navigation() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-20 bg-gradient-to-r from-purple-100/95 via-pink-100/90 to-red-100/95 backdrop-blur-md z-40" />
+      <div className="fixed top-0 left-0 w-full h-20 bg-gradient-to-r from-gray-100/95 via-gray-50/90 to-gray-100/95 backdrop-blur-md z-40" />
 
-      <nav className="w-full fixed top-0 left-0 z-50 bg-gradient-to-r from-purple-50/95 via-pink-50/90 to-red-50/95 backdrop-blur-xl border-b border-purple-300/40 shadow-lg shadow-purple-500/20">
+      <nav className="w-full fixed top-0 left-0 z-50 bg-gradient-to-r from-gray-50/95 via-white/90 to-gray-50/95 backdrop-blur-xl border-b border-gray-200/40 shadow-lg shadow-gray-500/20">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-          <Link href="/" className="group flex items-center space-x-2">
-            <motion.div
-              whileHover={{ rotate: 360, scale: 1.1 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center shadow-lg"
-            >
-              <Sparkles className="w-6 h-6 text-white" />
-            </motion.div>
-            <span className="text-2xl font-bold text-gradient">
-              FutureTech
-            </span>
+          <Link href="/" className="group flex items-center">
+            <div className="h-12 flex items-center justify-center">
+              <Image
+                src="/loco/logo2.png"
+                alt="FutureTech Logo"
+                width={200}
+                height={48}
+                className="h-full w-auto object-contain"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

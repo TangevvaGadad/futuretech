@@ -11,6 +11,7 @@ import {
   Github
 } from "lucide-react";
 import TinyGif from "@/components/ui/tiny-gif";
+import Image from "next/image";
 
 const Footer = () => {
   const footerLinks = {
@@ -60,9 +61,13 @@ const Footer = () => {
                 viewport={{ once: true }}
               >
                 <div className="flex items-center space-x-2 mb-6">
-                  <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">F</span>
-                  </div>
+                  <Image
+                    src="/favicon.ico"
+                    alt="FutureTech Logo"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10"
+                  />
                   <span className="text-2xl font-bold">FutureTech</span>
                 </div>
                 <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
