@@ -2,46 +2,47 @@
 
 import type React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Star, Users, Zap, ArrowRight, CheckCircle, Calendar } from "lucide-react"
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Star, Users, Zap, CheckCircle } from "lucide-react"
 import { useState } from "react"
 import Navigation from "@/components/navigation"
+import Footer from "@/components/footer"
 
 const contactInfo = [
   {
-    icon: <Mail className="w-6 h-6" />,
+    icon: <Mail className="w-8 h-8" />,
     title: "Email Us",
     details: "hello@futuretech.com",
     subtitle: "We&apos;ll respond within 24 hours",
-    gradient: "from-purple-100 to-pink-100",
-    bgGradient: "from-purple-50 to-pink-50",
-    color: "purple",
+    bgColor: "bg-pink-100",
+    iconColor: "text-pink-600",
+    textColor: "text-gray-800",
   },
   {
-    icon: <Phone className="w-6 h-6" />,
+    icon: <Phone className="w-8 h-8" />,
     title: "Call Us",
     details: "+1 (555) 123-4567",
     subtitle: "Mon-Fri 9AM-6PM EST",
-    gradient: "from-pink-100 to-red-100",
-    bgGradient: "from-pink-50 to-red-50",
-    color: "pink",
+    bgColor: "bg-blue-100",
+    iconColor: "text-blue-600",
+    textColor: "text-gray-800",
   },
   {
-    icon: <MapPin className="w-6 h-6" />,
+    icon: <MapPin className="w-8 h-8" />,
     title: "Visit Us",
     details: "123 Business Ave, Suite 100",
     subtitle: "New York, NY 10001",
-    gradient: "from-purple-200 to-pink-200",
-    bgGradient: "from-purple-100 to-pink-100",
-    color: "purple",
+    bgColor: "bg-yellow-100",
+    iconColor: "text-yellow-600",
+    textColor: "text-gray-800",
   },
   {
-    icon: <Clock className="w-6 h-6" />,
+    icon: <Clock className="w-8 h-8" />,
     title: "Business Hours",
     details: "Monday - Friday",
     subtitle: "9:00 AM - 6:00 PM EST",
-    gradient: "from-pink-200 to-red-200",
-    bgGradient: "from-pink-100 to-red-100",
-    color: "pink",
+    bgColor: "bg-green-100",
+    iconColor: "text-green-600",
+    textColor: "text-gray-800",
   },
 ]
 
@@ -59,17 +60,33 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
+    try {
+      const response = await fetch("/api/contact/page", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || "Failed to submit form")
+      }
+
+      setIsSubmitted(true)
       setFormData({ name: "", email: "", company: "", message: "" })
-    }, 3000)
+      
+      // Reset success message after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false)
+      }, 3000)
+    } catch (err) {
+      console.error("Error submitting form:", err)
+      // You can add error state handling here if needed
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -103,7 +120,7 @@ export default function ContactPage() {
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
+              transition={{duration: 0.2 }}
               className="inline-block mb-6"
             >
               <div className="bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 rounded-full">
@@ -164,67 +181,31 @@ export default function ContactPage() {
             {contactInfo.map((info, index) => (
               <motion.div
                 key={info.title}
-                initial={{ opacity: 0, y: 40, rotateY: -15 }}
-                whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 whileHover={{ 
                   scale: 1.05, 
-                  y: -15,
-                  rotateY: 5,
+                  y: -10,
                   transition: { duration: 0.3 }
                 }}
-                className="group relative"
+                className="group relative h-full"
               >
-                <div className={`relative p-8 rounded-3xl bg-gradient-to-br ${info.gradient} shadow-xl hover:shadow-2xl transition-all duration-500 text-center overflow-hidden`}>
-                  {/* Animated Background */}
-                  <motion.div
-                    className={`absolute inset-0 bg-gradient-to-br ${info.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  
-                  {/* Floating Elements */}
-                  <motion.div
-                    className="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full"
-                    animate={{ 
-                      y: [0, -10, 0],
-                      opacity: [0.2, 0.5, 0.2]
-                    }}
-                    transition={{ 
-                      duration: 3,
-                      repeat: Infinity,
-                      delay: index * 0.5
-                    }}
-                  />
-                  <motion.div
-                    className="absolute bottom-4 left-4 w-6 h-6 bg-white/10 rounded-full"
-                    animate={{ 
-                      y: [0, 10, 0],
-                      opacity: [0.1, 0.3, 0.1]
-                    }}
-                    transition={{ 
-                      duration: 4,
-                      repeat: Infinity,
-                      delay: index * 0.3
-                    }}
-                  />
-                  
-                  <div className="relative z-10">
+                <div className={`relative p-8 rounded-2xl ${info.bgColor} shadow-lg hover:shadow-xl transition-all duration-300 text-center h-full flex flex-col`}>
+                  <div className="flex-1 flex flex-col justify-center">
                     <motion.div 
-                      className="text-white mb-6 flex justify-center"
+                      className={`${info.iconColor} mb-6 flex justify-center`}
                       whileHover={{ 
-                        scale: 1.2, 
-                        rotate: 360,
-                        transition: { duration: 0.6 }
+                        scale: 1.1, 
+                        transition: { duration: 0.3 }
                       }}
                     >
                       {info.icon}
                     </motion.div>
-                    <h3 className="text-xl font-bold text-white mb-3">{info.title}</h3>
-                    <p className="text-white font-semibold mb-2 text-lg">{info.details}</p>
-                    <p className="text-white/80 text-sm">{info.subtitle}</p>
+                    <h3 className={`text-xl font-bold ${info.textColor} mb-3`}>{info.title}</h3>
+                    <p className={`${info.textColor} font-semibold mb-2 text-lg`}>{info.details}</p>
+                    <p className={`${info.textColor} opacity-80 text-sm`}>{info.subtitle}</p>
                   </div>
                 </div>
               </motion.div>
@@ -472,54 +453,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 lg:px-8 gradient-primary relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-block mb-6"
-            >
-              <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full">
-                <span className="text-white font-semibold">Let&apos;s Work Together</span>
-              </div>
-            </motion.div>
-            
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Start Your Project?
-            </h2>
-            <p className="text-xl text-purple-100 mb-8">
-              Let&apos;s schedule a consultation to discuss your needs and explore how we can help transform your business.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-50 transition-all shadow-xl flex items-center gap-2"
-              >
-                <Calendar className="w-5 h-5" />
-                Schedule Consultation
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-purple-600 transition-all flex items-center gap-2"
-              >
-                <ArrowRight className="w-5 h-5" />
-                Learn More
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <Footer />
     </div>
   )
 }

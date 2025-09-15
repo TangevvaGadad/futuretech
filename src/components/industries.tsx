@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Lottie from "lottie-react"
+import { motion } from "framer-motion";
+import Lottie from "lottie-react";
 
 // Import your Lottie JSONs (download from lottiefiles.com and save in /lotties folder)
-import educationAnim from "../lotties/education.json"
-import telecomAnim from "../lotties/telecom.json"
-import energyAnim from "../lotties/energy.json"
-import healthcareAnim from "../lotties/healthcare.json"
-import itAnim from "../lotties/it.json"
-import emergingAnim from "../lotties/emerging.json"
+import educationAnim from "../lotties/education.json";
+import telecomAnim from "../lotties/telecom.json";
+import energyAnim from "../lotties/energy.json";
+import healthcareAnim from "../lotties/healthcare.json";
+import itAnim from "../lotties/it.json";
+import emergingAnim from "../lotties/emerging.json";
 
 const Industries = () => {
   const containerVariants = {
@@ -18,7 +18,7 @@ const Industries = () => {
       opacity: 1,
       transition: { staggerChildren: 0.2 },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -27,7 +27,7 @@ const Industries = () => {
       y: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   const industries = [
     {
@@ -66,7 +66,7 @@ const Industries = () => {
       anim: emergingAnim,
       bg: "bg-gradient-to-br from-teal-200 to-teal-300",
     },
-  ]
+  ];
 
   return (
     <section id="industries" className="py-20 bg-soft">
@@ -100,10 +100,10 @@ const Industries = () => {
             <motion.div
               key={idx}
               variants={itemVariants}
-              whileHover={{ scale: 1.05, y: -5 }}
+              whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.01 } }}
               className={`${industry.bg} p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center`}
             >
-              {/* Centered Lottie */}
+              {/* Centered Lottie Animation */}
               <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
                 <Lottie animationData={industry.anim} loop={true} />
               </div>
@@ -115,7 +115,7 @@ const Industries = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Industries
+export default Industries;

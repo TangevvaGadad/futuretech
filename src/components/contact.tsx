@@ -6,11 +6,62 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import Lottie from "lottie-react"
+import { useState } from "react"
 
 // Import the animation JSON (place your file in /lotties folder)
 import contactAnim from "../lotties/contact.json" assert { type: "json" }
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    message: "",
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState("")
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError("")
+
+    try {
+      const response = await fetch("/api/contact/section", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || "Failed to submit form")
+      }
+
+      setIsSubmitted(true)
+      setFormData({ firstName: "", lastName: "", phone: "", email: "", message: "" })
+      
+      // Reset success message after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false)
+      }, 3000)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An error occurred")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -49,7 +100,7 @@ const Contact = () => {
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
             Have questions, ideas, or collaboration opportunities? Send us a
-            message and we’ll get back to you soon!
+            message and we&apos;ll get back to you soon!
           </motion.p>
         </motion.div>
 
@@ -61,23 +112,50 @@ const Contact = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={containerVariants}
+            onSubmit={handleSubmit}
             className="bg-white p-8 rounded-3xl shadow-lg flex flex-col space-y-6"
           >
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded"
+              >
+                {error}
+              </motion.div>
+            )}
+
+            {isSubmitted && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded"
+              >
+                Message sent successfully! We&apos;ll get back to you soon.
+              </motion.div>
+            )}
+
             <motion.div variants={itemVariants}>
-              <Label htmlFor="firstName">Firstname</Label>
+              <Label htmlFor="firstName">Firstname *</Label>
               <Input
                 id="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
                 placeholder="Your first name"
                 className="mt-2"
+                required
               />
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <Label htmlFor="lastName">Lastname</Label>
+              <Label htmlFor="lastName">Lastname *</Label>
               <Input
                 id="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
                 placeholder="Your last name"
                 className="mt-2"
+                required
               />
             </motion.div>
 
@@ -86,28 +164,36 @@ const Contact = () => {
               <Input
                 id="phone"
                 type="tel"
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder="Your phone number"
                 className="mt-2"
               />
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">Email *</Label>
               <Input
                 id="email"
                 type="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="your@email.com"
                 className="mt-2"
+                required
               />
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message">Message *</Label>
               <Textarea
                 id="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your message..."
                 className="mt-2"
                 rows={5}
+                required
               />
             </motion.div>
 
@@ -115,8 +201,12 @@ const Contact = () => {
               variants={itemVariants}
               className="flex justify-center pt-4"
             >
-              <Button className="btn-primary px-8 py-3 shadow-lg hover:shadow-2xl">
-                Send Message
+              <Button 
+                type="submit"
+                disabled={isSubmitting}
+                className="btn-primary px-8 py-3 shadow-lg hover:shadow-2xl disabled:opacity-50"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </motion.div>
           </motion.form>

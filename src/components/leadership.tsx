@@ -9,9 +9,8 @@ const Leadership = () => {
   const leadership = [
     {
       name: "Jaden Stewart",
-      title: "Co-founder and CEO",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      title: "Founder and CEO",
+      image: "/pictures/jadenm.jpg",
       color: "from-blue-500 to-blue-600",
     },
     {
@@ -24,20 +23,18 @@ const Leadership = () => {
     {
       name: "Hanadi",
       title: "Chairman",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: "/pictures/hanadi-chairman.jpg",
       color: "from-blue-700 to-blue-800",
     },
     {
       name: "Misbah Uddin",
       title: "Managing Director",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+      image: "/pictures/Misbah Uddin-Managing directorm.jpg",
       color: "from-blue-800 to-blue-900",
     },
     {
       name: "Prasanna Kumar MR",
-      title: "Chief Technology Officer ",
+      title: "Chief Technology Officer",
       image:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
       color: "from-blue-400 to-blue-500",
@@ -45,8 +42,7 @@ const Leadership = () => {
     {
       name: "Samah",
       title: "Chief Operating Officer",
-      image:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+      image: "/pictures/samah-coom.jpg",
       color: "from-blue-300 to-blue-400",
     },
   ];
@@ -102,7 +98,7 @@ const Leadership = () => {
               whileHover={{ y: -8, scale: 1.03 }}
               className="group"
             >
-              <Card className="p-6 h-full hover:shadow-2xl transition-all duration-500 border-0 bg-gray-800 relative overflow-hidden">
+              <Card className="p-6 h-full hover:shadow-2xl transition-all duration-500 border-0 bg-gray-800 relative overflow-hidden group-hover:bg-gray-750">
                 {/* Background Gradient Glow */}
                 <div className="absolute top-0 right-0 w-40 h-40 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
                   <div
@@ -112,13 +108,13 @@ const Leadership = () => {
 
                 <div className="relative z-10">
                   {/* Profile Image */}
-                  <div className="w-full h-64 mb-6 rounded-lg overflow-hidden bg-gradient-to-br from-gray-700 to-gray-600">
+                  <div className="w-full aspect-square mb-6 rounded-lg overflow-hidden bg-gradient-to-br from-gray-700 to-gray-600 relative border border-gray-600 group-hover:border-gray-500 transition-colors duration-300 flex items-center justify-center">
                     <Image
                       src={member.image}
                       alt={member.name}
-                      width={500}
+                      width={256}
                       height={256}
-                      className="w-full h-full object-cover rounded-lg"
+                      className="object-contain group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
                     />
                   </div>

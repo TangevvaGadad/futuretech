@@ -30,7 +30,7 @@ const About = () => {
   const services = [
     {
       title: "Global Technology Solutions",
-      desc: "We deliver world-class technology solutions that empower communities worldwide. From software development to emerging technologies, we create opportunities and drive sustainable growth.",
+      desc: "We deliver world-class technology solutions that empower communities. From software development to emerging technologies, we drive sustainable growth.",
       animation: globalTechAnim,
       bg: "bg-gradient-to-br from-pink-200 to-pink-300",
     },
@@ -86,7 +86,7 @@ const About = () => {
             <motion.div
               key={idx}
               variants={itemVariants}
-              whileHover={{ scale: 1.05, y: -5 }}
+              whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.01 } }}
               className={`${service.bg} p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500`}
             >
               {/* Lottie Animation */}

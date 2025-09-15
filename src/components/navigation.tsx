@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
 import { ChevronDown, ArrowRight, Menu, X, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -205,11 +204,6 @@ export default function Navigation() {
               ),
             )}
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="btn-primary px-6 py-2 rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40">
-                Get Started
-              </Button>
-            </motion.div>
           </div>
 
           <motion.button
@@ -310,11 +304,6 @@ export default function Navigation() {
                   ),
                 )}
 
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                  <Button className="w-full btn-primary py-3 rounded-full shadow-lg shadow-blue-500/25">
-                    Get Started
-                  </Button>
-                </motion.div>
               </div>
             </motion.div>
           )}

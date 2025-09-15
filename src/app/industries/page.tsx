@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { GraduationCap, Radio, Zap, Heart, Monitor, Cpu, ArrowRight, Star, Users, TrendingUp } from "lucide-react"
+import { GraduationCap, Radio, Zap, Heart, Monitor, Cpu, Star, Users, TrendingUp } from "lucide-react"
 import type { Variants } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Image from "next/image"
@@ -14,7 +14,7 @@ const industries = [
       "Revolutionizing learning through innovative educational technology solutions that make quality education accessible to all.",
     gradient: "from-purple-100 to-pink-100",
     bgGradient: "from-purple-50 to-pink-50",
-    stats: "500+ Educational Institutions",
+    // stats: "500+ Educational Institutions",
     features: ["E-Learning Platforms", "Student Management Systems", "Virtual Classrooms", "Educational Analytics"],
     image: "/edu.png",
     color: "purple",
@@ -26,7 +26,7 @@ const industries = [
       "Enabling seamless communication and media experiences with cutting-edge telecommunications and broadcasting solutions.",
     gradient: "from-pink-100 to-red-100",
     bgGradient: "from-pink-50 to-red-50",
-    stats: "200+ Media Companies",
+    // stats: "200+ Media Companies",
     features: ["5G Infrastructure", "Streaming Solutions", "Content Management", "Network Optimization"],
     image: "/techandmed.png",
     color: "pink",
@@ -38,7 +38,7 @@ const industries = [
       "Powering the future with sustainable energy solutions and smart grid technologies for a greener tomorrow.",
     gradient: "from-purple-200 to-pink-200",
     bgGradient: "from-purple-100 to-pink-100",
-    stats: "150+ Energy Projects",
+    // stats: "150+ Energy Projects",
     features: ["Smart Grid Systems", "Renewable Energy", "Energy Analytics", "Carbon Footprint Tracking"],
     image: "/energyandsustain.png",
     color: "purple",
@@ -50,7 +50,7 @@ const industries = [
       "Transforming healthcare delivery through digital health solutions, telemedicine, and medical technology innovations.",
     gradient: "from-pink-200 to-red-200",
     bgGradient: "from-pink-100 to-red-100",
-    stats: "300+ Healthcare Providers",
+    // stats: "300+ Healthcare Providers",
     features: ["Telemedicine Platforms", "Electronic Health Records", "Medical IoT", "Health Analytics"],
     image: "/health.png",
     color: "pink",
@@ -62,7 +62,7 @@ const industries = [
       "Empowering businesses with comprehensive IT solutions, cloud infrastructure, and digital transformation services.",
     gradient: "from-purple-300 to-pink-300",
     bgGradient: "from-purple-200 to-pink-200",
-    stats: "1000+ IT Projects",
+    // stats: "1000+ IT Projects",
     features: ["Cloud Migration", "DevOps Solutions", "Cybersecurity", "Digital Transformation"],
     image: "/info.png",
     color: "purple",
@@ -74,7 +74,7 @@ const industries = [
       "Pioneering the future with AI, blockchain, IoT, and other emerging technologies that shape tomorrow's world.",
     gradient: "from-pink-300 to-red-300",
     bgGradient: "from-pink-200 to-red-200",
-    stats: "100+ Innovation Projects",
+    // stats: "100+ Innovation Projects",
     features: ["Artificial Intelligence", "Blockchain Solutions", "IoT Ecosystems", "Quantum Computing"],
     image: "/emer.png",
     color: "pink",
@@ -183,10 +183,6 @@ export default function IndustriesPage() {
 
                   <div className="flex flex-wrap gap-4">
                     <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-                      <Star className="w-5 h-5 text-yellow-500" />
-                      <span className="font-semibold text-gray-800">{industry.stats}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
                       <Users className="w-5 h-5 text-blue-500" />
                       <span className="font-semibold text-gray-800">Expert Team</span>
                     </div>
@@ -212,14 +208,6 @@ export default function IndustriesPage() {
                     ))}
                   </div>
 
-                  <motion.button
-                    whileHover={{ scale: 1.05, x: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`inline-flex items-center space-x-2 px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r ${industry.gradient} shadow-lg hover:shadow-xl transition-all duration-300`}
-                  >
-                    <span>Explore Solutions</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.button>
                 </motion.div>
 
                 {/* Image Side */}
@@ -277,8 +265,8 @@ export default function IndustriesPage() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { number: "2000+", label: "Projects Completed", icon: <Star className="w-8 h-8" /> },
-              { number: "50+", label: "Industries Served", icon: <Users className="w-8 h-8" /> },
+              { number: "2", label: "Projects Completed", icon: <Star className="w-8 h-8" /> },
+              { number: "4", label: "Industries Served", icon: <Users className="w-8 h-8" /> },
               { number: "98%", label: "Client Satisfaction", icon: <TrendingUp className="w-8 h-8" /> },
               { number: "24/7", label: "Support Available", icon: <Zap className="w-8 h-8" /> },
             ].map((stat, index) => (
