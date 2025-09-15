@@ -147,7 +147,7 @@ export default function ContactPage() {
               className="flex flex-wrap justify-center gap-8 mt-12"
             >
               {[
-                { icon: <Users className="w-6 h-6" />, text: "500+ Happy Clients", color: "text-blue-600" },
+                { icon: <Users className="w-6 h-6" />, text: "Happy Clients", color: "text-blue-600" },
                 { icon: <Star className="w-6 h-6" />, text: "98% Satisfaction", color: "text-yellow-600" },
                 { icon: <Zap className="w-6 h-6" />, text: "24/7 Support", color: "text-green-600" },
               ].map((stat, index) => (

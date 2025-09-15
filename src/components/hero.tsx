@@ -21,7 +21,7 @@ export default function HeroSection() {
         <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full opacity-25 animate-pulse-slow"></div>
       </div>
       
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 py-16 relative z-10">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 py-5 relative z-10">
         
         {/* Left Content */}
         <div className="max-w-4xl lg:ml-8">
@@ -38,7 +38,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-3xl font-bold text-gray-900 leading-tight lg:text-4xl xl:text-5xl"
+            className="text-3xl font-bold text-gray-900 leading-tight lg:text-4xl xl:text-5xl px-2 py-5"
           >
             We build <span className="text-gradient font-extrabold">innovative solutions</span> that{" "}
             transform businesses

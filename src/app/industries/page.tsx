@@ -12,8 +12,9 @@ const industries = [
     title: "Education & EdTech",
     description:
       "Revolutionizing learning through innovative educational technology solutions that make quality education accessible to all.",
-    gradient: "from-purple-100 to-pink-100",
+    gradient: "from-purple-500 via-purple-600 to-pink-500",
     bgGradient: "from-purple-50 to-pink-50",
+    iconGradient: "from-purple-500 via-purple-600 to-pink-500",
     // stats: "500+ Educational Institutions",
     features: ["E-Learning Platforms", "Student Management Systems", "Virtual Classrooms", "Educational Analytics"],
     image: "/edu.png",
@@ -24,8 +25,9 @@ const industries = [
     title: "Telecom & Media",
     description:
       "Enabling seamless communication and media experiences with cutting-edge telecommunications and broadcasting solutions.",
-    gradient: "from-pink-100 to-red-100",
+    gradient: "from-pink-500 via-pink-600 to-red-500",
     bgGradient: "from-pink-50 to-red-50",
+    iconGradient: "from-pink-500 via-pink-600 to-red-500",
     // stats: "200+ Media Companies",
     features: ["5G Infrastructure", "Streaming Solutions", "Content Management", "Network Optimization"],
     image: "/techandmed.png",
@@ -36,48 +38,52 @@ const industries = [
     title: "Energy & Sustainability",
     description:
       "Powering the future with sustainable energy solutions and smart grid technologies for a greener tomorrow.",
-    gradient: "from-purple-200 to-pink-200",
-    bgGradient: "from-purple-100 to-pink-100",
+    gradient: "from-emerald-500 via-teal-500 to-cyan-500",
+    bgGradient: "from-emerald-50 to-cyan-50",
+    iconGradient: "from-emerald-500 via-teal-500 to-cyan-500",
     // stats: "150+ Energy Projects",
     features: ["Smart Grid Systems", "Renewable Energy", "Energy Analytics", "Carbon Footprint Tracking"],
     image: "/energyandsustain.png",
-    color: "purple",
+    color: "emerald",
   },
   {
     icon: <Heart className="w-12 h-12" />,
     title: "Healthcare & Life Sciences",
     description:
       "Transforming healthcare delivery through digital health solutions, telemedicine, and medical technology innovations.",
-    gradient: "from-pink-200 to-red-200",
-    bgGradient: "from-pink-100 to-red-100",
+    gradient: "from-rose-500 via-pink-500 to-red-500",
+    bgGradient: "from-rose-50 to-red-50",
+    iconGradient: "from-rose-500 via-pink-500 to-red-500",
     // stats: "300+ Healthcare Providers",
     features: ["Telemedicine Platforms", "Electronic Health Records", "Medical IoT", "Health Analytics"],
     image: "/health.png",
-    color: "pink",
+    color: "rose",
   },
   {
     icon: <Monitor className="w-12 h-12" />,
     title: "Information Technology",
     description:
       "Empowering businesses with comprehensive IT solutions, cloud infrastructure, and digital transformation services.",
-    gradient: "from-purple-300 to-pink-300",
-    bgGradient: "from-purple-200 to-pink-200",
+    gradient: "from-blue-500 via-indigo-500 to-purple-500",
+    bgGradient: "from-blue-50 to-purple-50",
+    iconGradient: "from-blue-500 via-indigo-500 to-purple-500",
     // stats: "1000+ IT Projects",
     features: ["Cloud Migration", "DevOps Solutions", "Cybersecurity", "Digital Transformation"],
     image: "/info.png",
-    color: "purple",
+    color: "blue",
   },
   {
     icon: <Cpu className="w-12 h-12" />,
     title: "Emerging Technologies",
     description:
       "Pioneering the future with AI, blockchain, IoT, and other emerging technologies that shape tomorrow's world.",
-    gradient: "from-pink-300 to-red-300",
-    bgGradient: "from-pink-200 to-red-200",
+    gradient: "from-violet-500 via-purple-500 to-fuchsia-500",
+    bgGradient: "from-violet-50 to-fuchsia-50",
+    iconGradient: "from-violet-500 via-purple-500 to-fuchsia-500",
     // stats: "100+ Innovation Projects",
     features: ["Artificial Intelligence", "Blockchain Solutions", "IoT Ecosystems", "Quantum Computing"],
     image: "/emer.png",
-    color: "pink",
+    color: "violet",
   },
 ]
 
@@ -160,14 +166,14 @@ export default function IndustriesPage() {
                 >
                   <div className="space-y-4">
                     <motion.div
-                      className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${industry.gradient} shadow-lg`}
+                      className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${industry.iconGradient} shadow-xl shadow-black/20`}
                       whileHover={{ 
-                        scale: 1.1, 
+                        scale: 1.15, 
                         rotate: 360,
                         transition: { duration: 0.6 }
                       }}
                     >
-                      <div className="text-white">
+                      <div className="text-white drop-shadow-lg">
                         {industry.icon}
                       </div>
                     </motion.div>
@@ -182,11 +188,11 @@ export default function IndustriesPage() {
                   </div>
 
                   <div className="flex flex-wrap gap-4">
-                    <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                    <div className="flex items-center space-x-2 bg-pink-100/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
                       <Users className="w-5 h-5 text-blue-500" />
                       <span className="font-semibold text-gray-800">Expert Team</span>
                     </div>
-                    <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                    <div className="flex items-center space-x-2 bg-pink-100/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
                       <TrendingUp className="w-5 h-5 text-green-500" />
                       <span className="font-semibold text-gray-800">Proven Results</span>
                     </div>
@@ -212,7 +218,7 @@ export default function IndustriesPage() {
 
                 {/* Image Side */}
                 <motion.div 
-                  className="flex-1 relative"
+                  className="flex-1 relative hidden lg:block"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >

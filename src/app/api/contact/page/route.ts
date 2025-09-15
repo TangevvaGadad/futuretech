@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
+import { sendContactPageNotification } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
@@ -32,6 +33,20 @@ export async function POST(request: NextRequest) {
         message,
       },
     })
+
+    // Send email notification
+    try {
+      await sendContactPageNotification({
+        name,
+        email,
+        company: company || undefined,
+        message,
+      })
+      console.log('Email notification sent for contact page submission')
+    } catch (emailError) {
+      console.error('Failed to send email notification:', emailError)
+      // Don't fail the request if email fails
+    }
 
     return NextResponse.json(
       { 
