@@ -72,12 +72,12 @@ export default function Navigation() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-20 bg-gradient-to-r from-gray-100/95 via-gray-50/90 to-gray-100/95 backdrop-blur-md z-40" />
+      <div className="fixed top-0 left-0 w-full h-16 bg-gradient-to-r from-gray-100/95 via-gray-50/90 to-gray-100/95 backdrop-blur-md z-40" />
 
       <nav className="w-full fixed top-0 left-0 z-50 bg-gradient-to-r from-gray-50/95 via-white/90 to-gray-50/95 backdrop-blur-xl border-b border-gray-200/40 shadow-lg shadow-gray-500/20">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
           <Link href="/" className="group flex items-center">
-            <div className="h-12 flex items-center justify-center">
+            <div className="h-10 flex items-center justify-center">
               <Image
                 src="/loco/logo2.png"
                 alt="FutureTech Logo"
