@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-soft overflow-hidden bubble-container">
-      {/* Beautiful Bubble Animations */}
+    <section className="relative bg-soft overflow-hidden bubble-container min-h-screen flex items-center">
+      {/* Simplified Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="bubble bubble-1"></div>
         <div className="bubble bubble-2"></div>
@@ -15,98 +15,87 @@ export default function HeroSection() {
         <div className="bubble bubble-4"></div>
         <div className="bubble bubble-5"></div>
         <div className="bubble bubble-6"></div>
-        {/* Additional floating elements */}
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full opacity-20 animate-pulse-slow"></div>
-        <div className="absolute top-1/2 -left-20 w-60 h-60 bg-gradient-to-br from-pink-200 to-red-200 rounded-full opacity-30 animate-float"></div>
-        <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full opacity-25 animate-pulse-slow"></div>
       </div>
       
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 py-5 relative z-10">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 lg:px-8 relative z-10">
         
-        {/* Left Content */}
-        <div className="max-w-4xl lg:ml-8">
+        {/* Left Content - Simplified */}
+        <div className="max-w-2xl lg:max-w-3xl text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="badge-theme text-sm font-medium mt-20 pt-4"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full text-purple-700 text-sm font-medium mb-8"
           >
+            <Sparkles className="w-4 h-4" />
             FutureTech • Transforming Ideas Into Reality
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-3xl font-bold text-gray-900 leading-tight lg:text-4xl xl:text-5xl px-2 py-5"
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6"
           >
-            We build <span className="text-gradient font-extrabold">innovative solutions</span> that{" "}
-            transform businesses
+            We build{" "}
+            <span className="text-gradient font-extrabold">
+              innovative solutions
+            </span>{" "}
+            that transform businesses
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mt-4 text-base text-gray-600 leading-relaxed max-w-2xl"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
           >
             From AI and cloud technologies to digital transformation, we deliver solutions that empower businesses and create lasting impact.
           </motion.p>
 
-          {/* Industry chips */}
+          {/* Simplified CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 flex flex-wrap gap-2"
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            {[
-              "Education & EdTech",
-              "Telecom & Media", 
-              "Energy & Sustainability",
-              "Healthcare",
-              "Information Technology",
-            ].map((chip) => (
-              <span key={chip} className="badge-theme text-xs font-medium px-3 py-1.5">
-                {chip}
-              </span>
-            ))}
-          </motion.div>
-
-          {/* Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <a
               href="#services"
-              className="cta-primary text-sm font-semibold"
+              className="cta-primary text-base font-semibold px-8 py-4 inline-flex items-center justify-center gap-2"
             >
-              Explore Services <ArrowRight size={16} />
+              Explore Our Services
+              <ArrowRight className="w-5 h-5" />
             </a>
             <a
               href="#contact"
-              className="cta-outline text-sm font-semibold"
+              className="cta-outline text-base font-semibold px-8 py-4 inline-flex items-center justify-center gap-2"
             >
-              Get Started Today <ArrowRight size={16} />
+              Get Started Today
+              <ArrowRight className="w-5 h-5" />
             </a>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Right Side Image */}
+        {/* Right Side Image - Simplified */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="relative mt-12 lg:mt-0"
+          transition={{ duration: 1, delay: 0.3 }}
+          className="relative mt-24 sm:mt-20 lg:mt-0 lg:ml-8"
         >
-          {/* Person Image */}
-          <Image
-  src="/boy.png"
-  alt="Hero visual"
-  width={920}
-  height={1120}
-  priority={false}
-  className="relative z-10 scale-105 mt-12" // ✅ Removed -translate-y-30, added margin-top
-/>
-
+          <div className="relative">
+            <Image
+              src="/boy.png"
+              alt="FutureTech Solutions"
+              width={2000}
+              height={3000}
+              priority
+              className="relative z-10 w-auto h-auto scale-150 mx-auto"
+            />
+            {/* Subtle glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-200/30 to-pink-200/30 rounded-full blur-3xl scale-110 -z-10"></div>
+          </div>
         </motion.div>
       </div>
     </section>
