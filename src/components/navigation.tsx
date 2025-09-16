@@ -95,7 +95,7 @@ export default function Navigation() {
                 >
                   <motion.button
                     whileHover={{ y: -2 }}
-                    className="flex items-center text-gray-700 font-medium hover:text-transparent hover:text-gradient transition-all duration-300"
+                    className="flex items-center text-gray-700 font-medium hover:text-transparent hover:text-gradient transition-all duration-100"
                   >
                     {item.name}
                     <motion.div animate={{ rotate: servicesOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
@@ -129,7 +129,7 @@ export default function Navigation() {
                               >
                                 <button
                                   onClick={() => setActiveService(activeService === index ? null : index)}
-                                  className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-gradient-to-r hover:from-purple-100/50 hover:to-pink-100/50 transition-all duration-300 group-hover:shadow-md"
+                                  className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-gradient-to-r hover:from-purple-100/50 hover:to-pink-100/50 transition-all duration-100 group-hover:shadow-md"
                                 >
                                   <div className="flex items-center">
                                     <span className="text-gray-700 font-medium group-hover:text-gray-900">
@@ -159,7 +159,7 @@ export default function Navigation() {
                                           initial={{ opacity: 0, x: -10 }}
                                           animate={{ opacity: 1, x: 0 }}
                                           transition={{ delay: i * 0.1 }}
-                                          className="flex items-center gap-2 hover:text-gray-800 transition-colors"
+                                          className="flex items-center gap-2 hover:text-gray-800 transition-colors duration-100"
                                         >
                                           <ArrowRight className="w-3 h-3 text-purple-500" />
                                           {detail}
@@ -180,14 +180,14 @@ export default function Navigation() {
                 <motion.div key={item.name} whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                   <Link
                     href={item.href}
-                    className={`relative transition-all duration-300 font-medium group ${
+                    className={`relative transition-all duration-100 font-medium group ${
                       pathname === item.href
                         ? 'text-transparent text-gradient'
                         : 'text-gray-700 hover:text-transparent hover:text-gradient'
                     }`}
                   >
                     {item.name}
-                    <span className={`absolute -bottom-1 left-0 h-0.5 gradient-primary transition-all duration-300 ${
+                    <span className={`absolute -bottom-1 left-0 h-0.5 gradient-primary transition-all duration-100 ${
                       pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'
                     }`} />
                   </Link>
@@ -201,7 +201,7 @@ export default function Navigation() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 rounded-lg bg-gradient-to-r from-purple-100 to-pink-100 text-gray-700 hover:from-purple-200 hover:to-pink-200 transition-all duration-300"
+            className="md:hidden p-2 rounded-lg bg-gradient-to-r from-purple-100 to-pink-100 text-gray-700 hover:from-purple-200 hover:to-pink-200 transition-all duration-100"
           >
             <motion.div animate={{ rotate: mobileOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -231,7 +231,7 @@ export default function Navigation() {
                     >
                       <button
                         onClick={() => setServicesOpen(!servicesOpen)}
-                        className="flex items-center justify-between w-full text-gray-700 font-medium p-3 rounded-lg hover:bg-gradient-to-r hover:from-blue-100/50 hover:to-blue-200/50 transition-all duration-300"
+                        className="flex items-center justify-between w-full text-gray-700 font-medium p-3 rounded-lg hover:bg-gradient-to-r hover:from-blue-100/50 hover:to-blue-200/50 transition-all duration-100"
                       >
                         {item.name}
                         <motion.div animate={{ rotate: servicesOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
@@ -282,7 +282,7 @@ export default function Navigation() {
                     >
                       <Link
                         href={item.href}
-                        className={`block font-medium p-3 rounded-lg transition-all duration-300 ${
+                        className={`block font-medium p-3 rounded-lg transition-all duration-100 ${
                           pathname === item.href
                             ? 'text-transparent text-gradient bg-gradient-to-r from-purple-100/50 to-pink-100/50'
                             : 'text-gray-700 hover:bg-gradient-to-r hover:from-purple-100/50 hover:to-pink-100/50 hover:text-gray-900'

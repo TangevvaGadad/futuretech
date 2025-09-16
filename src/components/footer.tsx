@@ -109,7 +109,7 @@ const Footer = () => {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-gray-400 hover:text-white transition-colors duration-200 hover:underline"
+                        className="text-gray-400 hover:text-white transition-colors duration-100 hover:underline"
                       >
                         {link.name}
                       </a>
@@ -148,7 +148,7 @@ const Footer = () => {
                   key={social.label}
                   href={social.href}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white transition-colors duration-100"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -158,7 +158,7 @@ const Footer = () => {
           </div>
         </div>
         {/* Decorative tiny GIF in the corner */}
-        <div className="absolute right-4 bottom-4 opacity-80 hover:opacity-100 transition-opacity">
+        <div className="absolute right-4 bottom-4 opacity-80 hover:opacity-100 transition-opacity duration-100">
           <TinyGif src="/bird.gif" alt="decorative" className="animate-float" />
         </div>
       </div>

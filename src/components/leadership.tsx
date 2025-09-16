@@ -98,9 +98,9 @@ const Leadership = () => {
               whileHover={{ y: -8, scale: 1.03 }}
               className="group"
             >
-              <Card className="p-6 h-full hover:shadow-2xl transition-all duration-500 border-0 bg-gray-800 relative overflow-hidden group-hover:bg-gray-750">
+              <Card className="p-6 h-full hover:shadow-2xl transition-all duration-150 border-0 bg-gray-800 relative overflow-hidden group-hover:bg-gray-750">
                 {/* Background Gradient Glow */}
-                <div className="absolute top-0 right-0 w-40 h-40 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                <div className="absolute top-0 right-0 w-40 h-40 opacity-5 group-hover:opacity-10 transition-opacity duration-150">
                   <div
                     className={`w-full h-full bg-gradient-to-r ${member.color} rounded-full blur-3xl`}
                   />
@@ -108,13 +108,13 @@ const Leadership = () => {
 
                 <div className="relative z-10">
                   {/* Profile Image */}
-                  <div className="w-full aspect-square mb-6 rounded-lg overflow-hidden bg-gradient-to-br from-gray-700 to-gray-600 relative border border-gray-600 group-hover:border-gray-500 transition-colors duration-300 flex items-center justify-center">
+                  <div className="w-full aspect-square mb-6 rounded-lg overflow-hidden bg-gradient-to-br from-gray-700 to-gray-600 relative border border-gray-600 group-hover:border-gray-500 transition-colors duration-100 flex items-center justify-center">
                     <Image
                       src={member.image}
                       alt={member.name}
                       width={256}
                       height={256}
-                      className="object-contain group-hover:scale-105 transition-transform duration-300"
+                      className="object-contain group-hover:scale-105 transition-transform duration-100"
                       loading="lazy"
                     />
                   </div>
@@ -129,7 +129,7 @@ const Leadership = () => {
 
                   {/* LinkedIn */}
                   <div className="flex justify-end">
-                    <div className="w-9 h-9 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer group-hover:scale-110">
+                    <div className="w-9 h-9 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-100 cursor-pointer group-hover:scale-110">
                       <Linkedin className="w-5 h-5 text-white" />
                     </div>
                   </div>

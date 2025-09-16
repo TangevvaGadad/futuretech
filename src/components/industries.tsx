@@ -101,7 +101,7 @@ const Industries = () => {
               key={idx}
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.01 } }}
-              className={`${industry.bg} p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center`}
+              className={`${industry.bg} p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-150 text-center`}
             >
               {/* Centered Lottie Animation */}
               <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">

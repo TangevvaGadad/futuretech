@@ -208,10 +208,10 @@ const OurWork = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="group p-4 bg-white/80 backdrop-blur-sm rounded-2xl border border-purple-200/50 hover:border-purple-300/50 transition-all duration-300 hover:shadow-lg"
+                  className="group p-4 bg-white/80 backdrop-blur-sm rounded-2xl border border-purple-200/50 hover:border-purple-300/50 transition-all duration-100 hover:shadow-lg"
                 >
                   <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-100">
                       {feature.icon}
                     </div>
                     <div>

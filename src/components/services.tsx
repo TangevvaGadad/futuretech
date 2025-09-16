@@ -61,14 +61,14 @@ const Services = () => {
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ x: 10 }}
-                className="flex items-start space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
+                className="flex items-start space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-all duration-100 group"
               >
                 <div className="flex-shrink-0 w-14 h-14">
                   <Lottie animationData={service.animation} loop={true} />
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors duration-100">
                     {service.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-tight">{service.brief}</p>

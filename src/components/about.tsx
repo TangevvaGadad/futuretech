@@ -87,7 +87,7 @@ const About = () => {
               key={idx}
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.01 } }}
-              className={`${service.bg} p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500`}
+              className={`${service.bg} p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-150`}
             >
               {/* Lottie Animation */}
               <div className="w-28 h-28 mx-auto mb-6">

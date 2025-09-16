@@ -192,7 +192,7 @@ export default function ContactPage() {
                 }}
                 className="group relative h-full"
               >
-                <div className={`relative p-8 rounded-2xl ${info.bgColor} shadow-lg hover:shadow-xl transition-all duration-300 text-center h-full flex flex-col`}>
+                <div className={`relative p-8 rounded-2xl ${info.bgColor} shadow-lg hover:shadow-xl transition-all duration-100 text-center h-full flex flex-col`}>
                   <div className="flex-1 flex flex-col justify-center">
                     <motion.div 
                       className={`${info.iconColor} mb-6 flex justify-center`}

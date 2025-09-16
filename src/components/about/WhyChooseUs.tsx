@@ -63,14 +63,14 @@ export default function WhyChooseUs() {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
-              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-300/30 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-300/30 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-150 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-150" />
               <div className="relative z-10">
-                <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-300">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-100">
                   Innovative Solutions
                 </h3>
-                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-100">
                   We develop AI, Blockchain, Cloud, and IoT solutions designed to solve real-world challenges in multiple industries.
                 </p>
               </div>
@@ -83,14 +83,14 @@ export default function WhyChooseUs() {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
-              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-300/30 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-300/30 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-150 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-150" />
               <div className="relative z-10">
-                <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-300">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-100">
                   Global Impact
                 </h3>
-                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-100">
                   We empower underserved communities and refugees through education and technology, delivering opportunities for a better future.
                 </p>
               </div>
@@ -103,14 +103,14 @@ export default function WhyChooseUs() {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
-              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-300/30 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-300/30 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-150 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-150" />
               <div className="relative z-10">
-                <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-300">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-100">
                   Sustainable Growth
                 </h3>
-                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
+                <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-100">
                   We create scalable, cloud-native applications and enterprise solutions designed for long-term business success.
                 </p>
               </div>

@@ -202,7 +202,7 @@ export default function IndustriesPage() {
                     {industry.features.map((feature, idx) => (
                       <motion.div
                         key={idx}
-                        className="flex items-center space-x-3 p-3 rounded-xl bg-white/60 backdrop-blur-sm hover:bg-white/80 transition-all duration-300"
+                        className="flex items-center space-x-3 p-3 rounded-xl bg-white/60 backdrop-blur-sm hover:bg-white/80 transition-all duration-100"
                         whileHover={{ scale: 1.05 }}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -285,7 +285,7 @@ export default function IndustriesPage() {
                 className="text-center group"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl mb-4 group-hover:bg-white/30 transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl mb-4 group-hover:bg-white/30 transition-all duration-100">
                   <div className="text-white">
                     {stat.icon}
                   </div>

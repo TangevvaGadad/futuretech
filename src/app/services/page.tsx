@@ -117,9 +117,9 @@ export default function ServicesPage() {
                 key={service.title}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, y: -10 }}
-                className={`p-8 rounded-3xl bg-gradient-to-br ${service.gradient} shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer`}
+                className={`p-8 rounded-3xl bg-gradient-to-br ${service.gradient} shadow-lg hover:shadow-xl transition-all duration-100 group cursor-pointer`}
               >
-                <div className="text-gray-700 mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-gray-700 mb-6 group-hover:scale-110 transition-transform duration-100">
                   {service.icon}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">{service.title}</h3>
@@ -134,7 +134,7 @@ export default function ServicesPage() {
                 </ul>
                 <motion.button
                   whileHover={{ x: 5 }}
-                  className="flex items-center text-gray-800 font-semibold group-hover:text-gray-900 transition-colors"
+                  className="flex items-center text-gray-800 font-semibold group-hover:text-gray-900 transition-colors duration-100"
                 >
                   Learn More <ArrowRight className="w-4 h-4 ml-2" />
                 </motion.button>
@@ -160,7 +160,7 @@ export default function ServicesPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-50 transition-colors"
+              className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-50 transition-colors duration-100"
             >
               Get Started Today
             </motion.button>
