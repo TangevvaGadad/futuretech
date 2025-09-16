@@ -223,10 +223,10 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative h-full"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 to-pink-100/50 rounded-3xl blur-3xl"></div>
-            <div className="relative bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-purple-200/30">
+            <div className="relative bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-purple-200/30 h-full flex flex-col">
               <motion.div 
                 className="mb-8"
                 initial={{ opacity: 0, y: 20 }}
@@ -252,7 +252,7 @@ export default function ContactPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     onSubmit={handleSubmit}
-                    className="space-y-6"
+                    className="space-y-6 flex-1 flex flex-col"
                   >
                     <div className="grid md:grid-cols-2 gap-6">
                       <motion.div
@@ -309,6 +309,7 @@ export default function ContactPage() {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.6 }}
+                      className="flex-1 flex flex-col"
                     >
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
                       <textarea
@@ -317,7 +318,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         rows={6}
-                        className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none bg-white/80 backdrop-blur-sm"
+                        className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none bg-white/80 backdrop-blur-sm flex-1"
                         placeholder="Tell us about your project or how we can help..."
                       />
                     </motion.div>
@@ -352,7 +353,7 @@ export default function ContactPage() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
-                    className="text-center py-12"
+                    className="text-center py-12 flex-1 flex flex-col justify-center"
                   >
                     <motion.div
                       initial={{ scale: 0 }}
@@ -376,10 +377,10 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative h-full"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-pink-100/50 to-red-100/50 rounded-3xl blur-3xl"></div>
-            <div className="relative bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-pink-200/30">
+            <div className="relative bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-pink-200/30 h-full flex flex-col">
               <motion.div 
                 className="mb-6"
                 initial={{ opacity: 0, y: 20 }}
@@ -406,7 +407,7 @@ export default function ContactPage() {
 
               {/* Google Maps Embed */}
               <motion.div 
-                className="rounded-2xl overflow-hidden shadow-xl"
+                className="rounded-2xl overflow-hidden shadow-xl flex-1"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4 }}
@@ -415,7 +416,7 @@ export default function ContactPage() {
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878459418!3d40.74844097932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sus!4v1635959542834!5m2!1sen!2sus"
                   width="100%"
-                  height="400"
+                  height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"

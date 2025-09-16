@@ -24,7 +24,7 @@ export default function WhyChooseUs() {
   return (
     <section className="py-20 px-6 lg:px-8 bg-gradient-to-r from-purple-50 to-white">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        
+
         {/* Left Content */}
         <motion.div
           initial="hidden"
@@ -36,21 +36,22 @@ export default function WhyChooseUs() {
             variants={itemVariants}
             className="text-sm font-semibold text-purple-600 mb-2"
           >
-            Why Choose Us
+            Why Choose FutureTech
           </motion.p>
+
           <motion.h2
             variants={itemVariants}
             className="text-4xl font-bold text-gray-900 mb-6"
           >
-            Tailored Solutions, Proven Results,
-            <br /> And Exceptional Service
+            Empowering Communities with Cutting-Edge Technology <br /> and Sustainable Solutions
           </motion.h2>
+
           <motion.p
             variants={itemVariants}
             className="text-lg text-gray-600 mb-10"
           >
-            At Gaadavi Consulting we understand that you have many options when it comes 
-            to Client Acquisition Services. So why should you choose us? Here are a few reasons.
+            FutureTech is driven by the belief that technology transforms lives.  
+            We focus on creating breakthrough solutions in Education, Healthcare, Energy, Telecom, and more, providing equal opportunities and real-world impact.
           </motion.p>
 
           {/* Feature Cards */}
@@ -62,16 +63,15 @@ export default function WhyChooseUs() {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
-              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-white/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-50/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
               <div className="relative z-10">
                 <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-300">
-                  Proven Result
+                  Innovative Solutions
                 </h3>
                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
-                  We have a track record of delivering tangible results for our clients. 
-                  From increasing website traffic and improving search.
+                  We develop AI, Blockchain, Cloud, and IoT solutions designed to solve real-world challenges in multiple industries.
                 </p>
               </div>
             </motion.div>
@@ -83,16 +83,15 @@ export default function WhyChooseUs() {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
-              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-white/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-50/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
               <div className="relative z-10">
                 <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-300">
-                  Customized Solutions
+                  Global Impact
                 </h3>
                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
-                  We believe that one size does not fit all when it comes to digital marketing. 
-                  That&apos;s why we take the time to understand your IT.
+                  We empower underserved communities and refugees through education and technology, delivering opportunities for a better future.
                 </p>
               </div>
             </motion.div>
@@ -104,16 +103,15 @@ export default function WhyChooseUs() {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
-              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-white/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-50/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
               <div className="relative z-10">
                 <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-purple-800 transition-colors duration-300">
-                  Dedicated Support
+                  Sustainable Growth
                 </h3>
                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
-                  Your success is our top priority. That&apos;s why we provide dedicated support 
-                  and guidance every step of the way.
+                  We create scalable, cloud-native applications and enterprise solutions designed for long-term business success.
                 </p>
               </div>
             </motion.div>
@@ -133,8 +131,8 @@ export default function WhyChooseUs() {
             className="rounded-[2rem] overflow-hidden shadow-lg"
           >
             <Image
-              src="/business-meeting-thumbnail.png" // ✅ replace with exported PNG
-              alt="Consulting professional"
+              src="/business-meeting-thumbnail.png"
+              alt="Collaborative Meeting"
               width={350}
               height={450}
               className="object-cover"
@@ -145,14 +143,15 @@ export default function WhyChooseUs() {
             className="rounded-[2rem] overflow-hidden shadow-lg"
           >
             <Image
-              src="/lap.png" // ✅ replace with exported PNG
-              alt="Professional working"
+              src="/lap.png"
+              alt="Innovative Tech Work"
               width={350}
               height={450}
               className="object-cover"
             />
           </motion.div>
         </motion.div>
+
       </div>
     </section>
   )

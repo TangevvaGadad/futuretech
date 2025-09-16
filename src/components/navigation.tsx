@@ -16,42 +16,34 @@ const services = [
       "Enterprise solutions (ERP, CRM, HRMS)",
       "SaaS & cloud-native applications",
     ],
-    icon: "💻",
   },
   {
     title: "Cloud & IT Infrastructure",
     details: ["Cloud migration & DevOps", "Cybersecurity & backup solutions", "Managed IT services"],
-    icon: "☁️",
   },
   {
     title: "AI, Data & Emerging Tech",
     details: ["AI/ML, NLP (chatbots, voice AI)", "Computer Vision & Data Analytics", "Blockchain, IoT & Big Data"],
-    icon: "🤖",
   },
   {
     title: "Digital Transformation",
     details: ["IT consulting & strategy", "Process automation (RPA)", "Enterprise architecture"],
-    icon: "🚀",
   },
   {
     title: "Product Innovation",
     details: ["MVP & prototyping", "API development & integration", "AR/VR & Metaverse solutions"],
-    icon: "💡",
   },
   {
     title: "Industry-specific Solutions",
     details: ["FinTech, Healthcare, E-commerce, Education", "Government & Smart Cities"],
-    icon: "🏢",
   },
   {
     title: "Enterprise IT Support",
     details: ["Helpdesk & remote support", "Maintenance & upgrades", "QA & testing"],
-    icon: "🛠️",
   },
   {
     title: "UI/UX & Branding",
     details: ["UI/UX design for web & mobile", "Branding & digital identity"],
-    icon: "🎨",
   },
 ]
 
@@ -139,8 +131,7 @@ export default function Navigation() {
                                   onClick={() => setActiveService(activeService === index ? null : index)}
                                   className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-gradient-to-r hover:from-purple-100/50 hover:to-pink-100/50 transition-all duration-300 group-hover:shadow-md"
                                 >
-                                  <div className="flex items-center space-x-3">
-                                    <span className="text-lg">{service.icon}</span>
+                                  <div className="flex items-center">
                                     <span className="text-gray-700 font-medium group-hover:text-gray-900">
                                       {service.title}
                                     </span>
@@ -265,8 +256,7 @@ export default function Navigation() {
                                 transition={{ delay: i * 0.05 }}
                                 className="space-y-2"
                               >
-                                <div className="flex items-center space-x-2">
-                                  <span className="text-sm">{service.icon}</span>
+                                <div className="flex items-center">
                                   <p className="font-medium text-gray-800">{service.title}</p>
                                 </div>
                                 <ul className="pl-6 space-y-1 text-sm text-gray-600">
