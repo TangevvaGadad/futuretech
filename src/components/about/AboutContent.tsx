@@ -31,15 +31,12 @@ export default function AboutContent() {
           className="text-center lg:text-left"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            IT & Consulting Solutions for Architects and Interiors
+            IT & Consulting Solutions for All Industries
           </h2>
           <p className="text-gray-600 leading-relaxed">
-            We specialize in helping design professionals elevate their brand,
-            showcase their portfolio, and maximize value delivery through
-            strategic consulting and smart IT solutions. From managing websites
-            and SEO to ensuring smooth tech integrations, we take care of
-            everything you need to grow your presence and stand out in a
-            competitive industry.
+          FutureTech specializes in empowering businesses and communities with innovative technology solutions.  
+  From developing enterprise software and cloud-native applications to enabling AI-driven automation and sustainable energy solutions,  
+  we help you streamline operations, boost digital presence, and create real-world impact in a rapidly evolving tech landscape.
           </p>
         </motion.div>
 

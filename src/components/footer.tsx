@@ -35,8 +35,8 @@ const Footer = () => {
     ],
     support: [
       { name: "Contact Us", href: "#contact" },
-      { name: "Documentation", href: "#docs" },
-      { name: "Support Center", href: "#support" },
+      { name: "Documentation", href: "/about" },
+      { name: "Support Center", href: "/contact" },
       { name: "Privacy Policy", href: "#privacy" }
     ]
   };
@@ -134,7 +134,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-gray-400 text-sm"
             >
-              © 2024 FutureTech. All rights reserved.
+              © 2025 FutureTech. All rights reserved.
             </motion.div>
             
             <motion.div

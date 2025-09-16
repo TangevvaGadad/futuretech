@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
-              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-50/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-300/30 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
               <div className="relative z-10">
@@ -83,7 +83,7 @@ export default function WhyChooseUs() {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
-              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-50/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-300/30 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
               <div className="relative z-10">
@@ -103,7 +103,7 @@ export default function WhyChooseUs() {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
-              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-50/95 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
+              className="group relative p-6 rounded-2xl border border-purple-200/60 bg-pink-300/30 backdrop-blur-sm shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-pink-50/0 to-red-50/0 group-hover:from-purple-100/60 group-hover:via-pink-100/40 group-hover:to-red-100/60 transition-all duration-500" />
               <div className="relative z-10">
