@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-soft overflow-hidden bubble-container flex items-center pt-12 lg:pt-0">
+    <section className="relative bg-soft overflow-hidden bubble-container flex items-center pt-8 lg:pt-10">
       {/* Simplified Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="bubble bubble-1"></div>
@@ -17,7 +17,7 @@ export default function HeroSection() {
         <div className="bubble bubble-6"></div>
       </div>
       
-      <div className="container mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between px-6 lg:px-8 relative z-10 min-h-[70vh] pt-8 lg:pt-0">
+      <div className="container mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between px-10 lg:px-8 relative z-10 min-h-[70vh] pt-8 lg:pt-0">
  
         {/* Left Content */}
         <div className="max-w-2xl lg:max-w-3xl text-center lg:text-left flex flex-col justify-center h-full lg:ml-24">

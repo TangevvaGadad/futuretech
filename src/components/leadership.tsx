@@ -17,7 +17,7 @@ const Leadership = () => {
       name: "Sanjay R Olekar",
       title: "Co-founder",
       image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
+        "/pictures/sn.jpeg",
       color: "from-blue-600 to-blue-700",
     },
     {
@@ -36,7 +36,7 @@ const Leadership = () => {
       name: "Prasanna Kumar MR",
       title: "Chief Technology Officer",
       image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+        "/pictures/pr.jpeg",
       color: "from-blue-400 to-blue-500",
     },
     {
