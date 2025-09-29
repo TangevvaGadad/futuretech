@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       openGraph: {
       type: "website",
       locale: "en_US",
-      url: "https://futuretech.com",
+      url: "https://futuretch.com",
       title: "FutureTech - Empowering Communities Through World-Class Technology",
       description: "Empowering communities worldwide with world-class technology and innovative solutions.",
       siteName: "FutureTech",

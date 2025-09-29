@@ -11,8 +11,8 @@ const contactInfo = [
   {
     icon: <Mail className="w-8 h-8" />,
     title: "Email Us",
-    details: "hello@futuretech.com",
-    subtitle: "We&apos;ll respond within 24 hours",
+    details: "Futuretechnology12d@gmail.com",
+    subtitle: "We'll respond within 24 hours",
     bgColor: "bg-pink-100",
     iconColor: "text-pink-600",
     textColor: "text-gray-800",
@@ -20,7 +20,7 @@ const contactInfo = [
   {
     icon: <Phone className="w-8 h-8" />,
     title: "Call Us",
-    details: "+1 (555) 123-4567",
+    details: "+25674900220",
     subtitle: "Mon-Fri 9AM-6PM EST",
     bgColor: "bg-blue-100",
     iconColor: "text-blue-600",
@@ -29,8 +29,8 @@ const contactInfo = [
   {
     icon: <MapPin className="w-8 h-8" />,
     title: "Visit Us",
-    details: "123 Business Ave, Suite 100",
-    subtitle: "New York, NY 10001",
+    details: "Kampala, Central Region",
+    subtitle: "Uganda",
     bgColor: "bg-yellow-100",
     iconColor: "text-yellow-600",
     textColor: "text-gray-800",
@@ -394,14 +394,14 @@ export default function ContactPage() {
                   <h2 className="text-3xl font-bold text-gray-900">Find Our Office</h2>
                 </div>
                 <p className="text-gray-600 mb-4">
-                  Visit us at our headquarters in the heart of New York City.
+                  Visit us at our headquarters in the heart of Uganda.
                 </p>
                 <motion.div 
                   className="flex items-center text-gray-700 bg-gradient-to-r from-pink-50 to-red-50 p-4 rounded-xl"
                   whileHover={{ scale: 1.02 }}
                 >
                   <MapPin className="w-5 h-5 mr-2 text-pink-600" />
-                  <span className="font-semibold">123 Business Ave, Suite 100, New York, NY 10001</span>
+                  <span className="font-semibold">Kampala, Central Region, Uganda</span>
                 </motion.div>
               </motion.div>
 
@@ -414,7 +414,7 @@ export default function ContactPage() {
                 whileHover={{ scale: 1.02 }}
               >
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878459418!3d40.74844097932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sus!4v1635959542834!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.27871743568!2d32.51672437465269!3d0.31320069256496874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbc0f9d74b39b%3A0x4538903dd96b6fec!2sKampala%2C%20Uganda!5e0!3m2!1sen!2sin!4v1759138397851!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -432,22 +432,22 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <motion.button
+                {/* <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-4 rounded-xl font-semibold hover:from-green-600 hover:to-green-700 transition-all shadow-lg"
                 >
                   <Phone className="w-4 h-4" />
                   Call Now
-                </motion.button>
-                <motion.button
+                </motion.button> */}
+                {/* <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-4 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all shadow-lg"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Live Chat
-                </motion.button>
+                </motion.button> */}
               </motion.div>
             </div>
           </motion.div>
